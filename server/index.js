@@ -7,44 +7,40 @@ var passport = require('passport');
 var app = express();
 var FacebookStrategy = require('passport-facebook').Strategy;
 var keys = require('./keys');
-// var facebook = require('./auth/facebook');
 
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
-passport.deserializeUser(function(obj, done) {
-  done(null, obj);
-});
-passport.use(new FacebookStrategy({
-  clientID: keys.facebookID,
-  clientSecret: keys.facebookSecret,
-  callbackURL: 'http://localhost:3000/auth/facebook/callback'
-}, function(token, refreshToken, userProfile, done) {
-  return done(null, userProfile);
-}));
+app.use(bodyParser.json());
+app.use(express.static(__dirname + './../public'));
 
-var requireAuth = function(req, res, next) {
-  console.log("is authed?", req.user);
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  return res.redirect('/login');
-}
+
+require('./auth/facebook')(passport);
+
 app.use(session({secret: 'I like turtles'}))
 app.use(passport.initialize())
 app.use(passport.session())
 
-app.get('/auth/facebook', passport.authenticate('facebook'));
 
-app.get('/auth/facebook/callback', passport.authenticate('facebook', {
-  successRedirect: '/',
-  failureRedirect: '/re'
+//facebook routes
+app.get('/login/facebook', passport.authenticate('facebook'));
+app.get('/login/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/me',
+  failureRedirect: '/login'
 }), function(req, res) {
   console.log(req.session);
 });
+
 app.get('/me', function (req, res) {
   res.send(req.user);
 })
+
+//connection to mongoose
+mongoose.set('debug', true);
+mongoose.connect('mongodb://localhost:27017/ecommerce', function (err) {
+  if (err) throw err;
+});
+mongoose.connection.once("open", function() {
+  console.log("Connected to MongoDB");
+});
+
 
 var port = 3000;
 app.listen(port, function () {
