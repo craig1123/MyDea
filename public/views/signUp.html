@@ -1,4 +1,47 @@
-
-
-
-<a href="/login/facebook">Log In with Facebook</a>
+<section>
+  <div class="sign">
+    <div class="sign-box">
+      <div class="sign-form">
+        <div class="sign-frame">
+          <h2 class="sign-title">Sign up</h2>
+          <form>
+            <fieldset>
+              <ol>
+                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="name" ng-model="name" required></li>
+                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="Email" ng-model="email" required></li>
+                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="Password" ng-model="password" required></li>
+                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="Re-enter password" ng-model="repassword" required></li>
+                <li class="mb2-signup">
+                  <br>
+                  <input class="btn btn--green btn--block submit" type="button" value="Sign Up!" ng-click="signup(name, email, password, repassword)">
+                  <br>
+                  <br>
+                  <p class="terms">
+                    By signing up, you agree to the terms of use and privacy policy.
+                  </p>
+                </li>
+              </ol>
+            </fieldset>
+          </form>
+          <div class="strikethru">
+            <div class="line"></div>
+            <div class="or">or you can</div>
+          </div>
+          <div class="mb1">
+            <li><a href="/login/facebook"><input class="btn btn--blue btn--block submit" type="button" value="Log in with Facebook"></a></li>
+            <p class="terms">
+              <br>
+              We'll never post anything on Facebook
+              <br>
+              without your permission.
+            </p>
+          </div>
+        </div>
+        <div class="already-account">
+          Already have an account?
+          <a ui-sref="login">Log in here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

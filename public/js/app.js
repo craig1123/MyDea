@@ -3,11 +3,15 @@ angular.module('myDea', ['ui.router'])
 .config(function ($stateProvider, $urlRouterProvider) {
 
   $stateProvider
-    .state('login', {
+    .state('home', {
+    url: '/home',
+    templateUrl: './../views/home.html'
+  }).state('login', {
     url: '/login',
     templateUrl: './../views/login.html'
   }).state('signUp', {
     url: '/signup',
+    controller: 'signupCtrl',
     templateUrl: './../views/signUp.html'
   }).state('create', {
     url: '/create',
@@ -28,5 +32,5 @@ angular.module('myDea', ['ui.router'])
     url: '/giveback',
     templateUrl: './../views/giveBack.html'
   })
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
 })

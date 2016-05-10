@@ -9,7 +9,7 @@ a {
 }
 a:hover{
   text-decoration: none;
-  color: #8cd1a8
+  color: #62d18f
 }
 
 /*Navigation bar*/
@@ -31,19 +31,36 @@ a:hover{
 .header-name {
   float: left;
   font-size: 59px;
-  color: #828587;
+  /*text-shadow: 8px 0px 19px;*/
+  font-family: cursive;
 }
 .primary-menu-link {
   float: left;
   padding: 25px 15px;
   font-size: 14px;
   font-weight: bold;
-  color: #828587;
 }
 
 .header-search {
+  border-left: solid 1px #D9D9DE;
+  color: #828587;
+  height: 100%;
+  padding: 24px 0 18px 24px;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
   float: left;
-  padding: 20px 75px;
+  /*padding: 23px 65px;
+  width: 33%;*/
+}
+.header-search input {
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 17px;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  color: black;
 }
 .nav-right {
   margin-right: 45px;
@@ -51,5 +68,211 @@ a:hover{
 .logged-out-link {
   padding: 25px 15px;
   float: right;
-  color: #00A0FF;
+}
+.logged-out-link a{
+  color: #004bde;
+}
+.logged-out-link a:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+/*every view*/
+.view {
+  z-index: -1;
+  background: linear-gradient(to bottom, #f7f7f2, #c2e5a2);
+  width: 100%;
+}
+
+/*Footer*/
+.footImage {
+  height: 267px;
+  width: 315px;
+  position: relative;
+  margin-left: 1px;
+  background-image: url('./../img/tree.png');
+  background-repeat: no-repeat;
+}
+footer {
+  background-color: #74b446;
+  color: #fff;
+  height: 40px;
+}
+.footerCopy {
+  width: 85%;
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+.footWords {
+  width: 232px;
+  font-weight: 600;
+  font-size: 19px;
+  font-family: Georgia, serif;
+  display: inline;
+  float: left;
+  margin-right: 25px;
+  margin-top: 10px;
+}
+.copyright {
+  width: 600px;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  display: inline;
+  float: left;
+  margin-top: 14px;
+  margin-left: 25px;
+}
+
+/*video header*/
+.header-container {
+  width: 100%;
+  height: 855px;
+  border-left: none;
+  border-right: none;
+  position: relative;
+  padding: 4px;
+}
+.video-container {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 3;
+}
+video {
+  position: absolute;
+  opacity: 0.78;
+  width: 100%;
+}
+.vid-description {
+  color: rgb(7, 89, 0);
+  z-index: 4;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 12%;
+  padding: 10px;
+  border-radius: 15px;
+  width: 700px;
+  letter-spacing: 3px;
+  font-size: 35px;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+/*idea cards*/
+
+
+
+/*sign-up and login*/
+.sign {
+  padding: 60px 20px;
+}
+.sign-box {
+  max-width: 400px;
+  margin: auto;
+}
+.sign-form {
+  background-color: #fff;
+  border: 1px solid #D9D9DE;
+  border-radius: 15px;
+  color: #828587;
+}
+.sign-frame {
+  padding: 20px;
+}
+.sign-title {
+  font-size: 32px;
+  line-height: 40px;
+  margin-bottom: 30px;
+  display: block;
+}
+li {
+  list-style: none;
+}
+fieldset {
+  margin-bottom: 20px;
+  border: none;
+}
+fieldset ol {
+  list-style: none;
+}
+fieldset ol li {
+  list-style: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+li input {
+  border: none;
+}
+.mb2 {
+  margin-bottom: 20px;
+}
+li input {
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 17px;
+  border-radius:10px;
+  box-shadow: #e8f6ff 0 0 5px;
+  border: 1px solid #bfbfbf;
+  outline: none;
+  color: black;
+  margin: 0;
+  width: 100%;
+}
+.btn--green {
+  background-color: #1dcf00;
+  color: #fff;
+}
+.btn--green:hover{
+  background-color: #74b446;
+}
+.terms {
+  font-size: 12px;
+  text-align: center;
+}
+.strikethru {
+  position: relative;
+  text-align: center;
+}
+.line {
+  height: 1px;
+  background-color: #D9D9DE;
+  width: 90%;
+  margin-left: 5%;
+}
+.or {
+  display: inline-block;
+  background-color: #fff;
+  padding: 5px 10px;
+  font-size: 14px;
+  top: -14px;
+  position: relative;
+  color: #828587;
+}
+.mb1 {
+  margin-bottom: 10px;
+}
+.btn--blue {
+  background-color: #3b5998;
+  color: #fff;
+}
+.btn--blue:hover {
+  background-color: #234896;
+}
+.already-account {
+  background-color: rgba(217,217,222,0.2);
+  border-top: 1px solid #D9D9DE;
+  padding: 20px;
+  font-size: 14px;
+  text-align: center;
+  color: #828587;
+}
+.already-account a{
+  color: #004bde;
+}
+.already-account a:hover {
+  background-color: rgb(240, 240, 240);
 }
