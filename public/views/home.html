@@ -19,7 +19,7 @@
             or "<a href="http://www.barcinno.com/5-reasons-you-should-share-your-startup-ideas/">5 reasons you should share your startup ideas</a>"
           </p>
           <br>
-            <li><input class="btn--green learn" type="button" value="Learn More" ui-sref="ideas"></li>
+            <li><input class="btn--green learn" type="button" value="Learn More" ui-sref="create"></li>
 
 
         </div>
@@ -27,13 +27,13 @@
     </div>
   </div>
 
-  <!-- idea cards -->
-  <section class="home-content">
+  <!-- Highest rated idea cards -->
+  <section class="home-content border-bottom">
       <div class="home-content-heading">
         <div class="wut">
           <div class="row">
             <div class="featured">
-              <h2>Featured Ideas</h2>
+              <h2>Highest Rated mIdeas</h2>
             </div>
             <div class="see-all">
               <a class="btn btn--border-gray btn--small" ui-sref="ideas">See all</a>
@@ -42,9 +42,30 @@
         </div>
       </div>
       <div class="card-content">
-        <ideacard></ideacard>
-        <ideacard></ideacard>
-        <ideacard></ideacard>
+        <ideacard class="cards"></ideacard>
+        <ideacard class="cards"></ideacard>
+        <ideacard class="cards"></ideacard>
+      </div>
+    </section>
+
+  <!-- featured idea cards -->
+  <section class="home-content border-bottom">
+      <div class="home-content-heading">
+        <div class="wut">
+          <div class="row">
+            <div class="featured">
+              <h2>Featured mIdeas</h2>
+            </div>
+            <div class="see-all">
+              <a class="btn btn--border-gray btn--small" ui-sref="ideas">See all</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-content">
+        <ideacard class="cards"></ideacard>
+        <ideacard class="cards"></ideacard>
+        <ideacard class="cards"></ideacard>
       </div>
     </section>
 

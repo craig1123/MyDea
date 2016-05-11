@@ -96,10 +96,10 @@ footer {
   background-color: #74b446;
   color: #fff;
   height: 40px;
+  position: relative;
 }
 .footerCopy {
   width: 85%;
-  float: none;
   margin-right: auto;
   margin-left: auto;
 }
@@ -176,7 +176,8 @@ video {
 
 /*idea cards*/
 .home-content {
-  padding: 40px 0px;
+  height: 540px;
+  position: relative;
 }
 .home-content-heading {
   max-width: 1040px;
@@ -210,22 +211,28 @@ video {
   color: #828587;
 }
 .card-content {
-  width: 90%;
-  margin: 40px auto auto auto;
+  max-width: 1040px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+.cards {
+  margin-right: -20px;
+  margin-left: -20px;
 }
 .card-outer {
-  width: 80%;
-  height: 500px;
+  width: 32%;
   position: relative;
-  margin-right: 20px;
-  margin-left: 20px;
-  margin: auto;
-  border: 1px solid #adadad;
-  outline: 0;
-  background-color: #74b446
+  float: left;
+  padding-right: 20px;
+  padding-left: 20px;
 }
-.card-outer a:focus a:active{
-  outline: 0 none;
+.card-almost-outer {
+  height: 415px;
+  margin-bottom: 10px;
+  border: 1px solid #adadad;
+  border-radius: 10px;
+  background-color: #74b446
 }
 .card-top {
   border-radius: 6px 6px 0 0;
