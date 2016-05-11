@@ -1,9 +1,7 @@
 angular.module('myDea')
 .controller('signupCtrl', function ($scope/*, signupServ*/) {
 
-
-
-$scope.signup = function(name, email, password, repassword) {
+  $scope.signup = function(name, email, password, repassword) {
     if (!name) {
         alert('Please enter a name');
       }

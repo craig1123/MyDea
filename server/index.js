@@ -5,12 +5,33 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 
 var app = express();
+
+//facebook
 var FacebookStrategy = require('passport-facebook').Strategy;
 var keys = require('./keys');
+
+//socket.io
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + './../public'));
 
+io.on('connection', function (socket) {
+  socket.on('userconnected', function (userId) {
+
+  })
+  socket.on('partner', function (msg) {
+    //put it in the database
+    //Fire other socket events
+    //this is a REST endpoint
+    //socket.emit, the user who sent the message will receive one back
+    //io.emit sends the msg to everyone
+
+    socket.emit("response", msg + "whatever")
+  })
+})
 
 require('./auth/facebook')(passport);
 

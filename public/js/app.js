@@ -5,9 +5,11 @@ angular.module('myDea', ['ui.router'])
   $stateProvider
     .state('home', {
     url: '/home',
+    controller: 'homeCtrl',
     templateUrl: './../views/home.html'
   }).state('login', {
     url: '/login',
+    controller: 'loginCtrl',
     templateUrl: './../views/login.html'
   }).state('signUp', {
     url: '/signup',

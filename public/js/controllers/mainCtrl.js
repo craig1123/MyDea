@@ -6,5 +6,16 @@ angular.module('myDea')
   //   });
   // }
   // $scope.login();
-  $scope.test = "Are you my mother";
+
+
+  // var socket = io();
+  // 
+  // $('form').submit(function () {
+  //   socket.emit('partner', $('#m').val());
+  //   $('#m').val('');
+  // })
+  // socket.on("response", function (msg) {
+  //   $('#messages').append($('<li>'))
+  // })
+
 })

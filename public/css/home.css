@@ -12,7 +12,7 @@ a:hover{
   color: #62d18f
 }
 
-/*Navigation bar*/
+/*/////////////////////////////Navigation bar//////////////////////////*/
 
 .nav-bar {
   width: 100%;
@@ -76,14 +76,14 @@ a:hover{
   background-color: rgb(240, 240, 240);
 }
 
-/*every view*/
+/*///////////////////////////////Every View/////////////////*/
 .view {
   z-index: -1;
   background: linear-gradient(to bottom, #f7f7f2, #c2e5a2);
   width: 100%;
 }
 
-/*Footer*/
+/*///////////////////////////////////Footer/////////////////////////*/
 .footImage {
   height: 267px;
   width: 315px;
@@ -123,14 +123,27 @@ footer {
   margin-left: 25px;
 }
 
+/*//////////////////////////////////////Home Page////////////////////////////*/
+.border-top {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #c5c5c6;
+}
+.border-bottom {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #c5c5c6;
+}
+
 /*video header*/
 .header-container {
   width: 100%;
-  height: 855px;
+  height: 800px;
   border-left: none;
   border-right: none;
   position: relative;
   padding: 4px;
+  margin-bottom: 30px;
 }
 .video-container {
   position: absolute;
@@ -154,18 +167,83 @@ video {
   margin-left: auto;
   margin-top: 12%;
   padding: 10px;
-  border-radius: 15px;
   width: 700px;
   letter-spacing: 3px;
   font-size: 35px;
   font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  border: none;
 }
 
+/*carousel*/
+.content {
+  width: 90%;
+  margin: 20px auto auto auto;
+}
+
+
 /*idea cards*/
+.card-outer {
+  width: 80%;
+  height: 500px;
+  position: relative;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin: auto;
+  border: 1px solid #adadad;
+  outline: 0;
+}
+.card-outer a:focus a:active{
+  outline: 0 none;
+}
+.card-top {
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+.card-top-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.card-mid {
+  padding: 10px;
+}
+.card-title {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.25em;
+  margin-bottom: 0.25em;
+}
+.card-title a {
+  color: #0F2105;
+}
+.card-bottom {
+
+}
+
+/*why share ideas?*/
+.bottom-home-page {
+  padding: 40px 0px;
+}
+.center-it {
+  text-align: center;
+  padding: 20px;
+  color: black;
+}
+.center-it-more {
+  color: #828587;
+  width: 910px;
+  margin: auto;
+  line-height: 20px;
+}
+.learn {
+  width: 126px;
+}
 
 
-
-/*sign-up and login*/
+/*/////////////////////////////sign-up and login///////////////////////*/
 .sign {
   padding: 60px 20px;
 }
@@ -212,7 +290,7 @@ li input {
 li input {
   padding: 10px;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 17px;
   border-radius:10px;
   box-shadow: #e8f6ff 0 0 5px;
@@ -243,6 +321,8 @@ li input {
   width: 90%;
   margin-left: 5%;
 }
+
+/*bottom half of the login card*/
 .or {
   display: inline-block;
   background-color: #fff;

@@ -17,3 +17,9 @@ angular.module('myDea')
       templateUrl: "./js/directives/footbar.html"
     }
   })
+  .directive("ideaCard", function () {
+    return {
+      restrict: "EA",
+      templateUrl: "./js/directives/ideaCard.html"
+    }
+  })
