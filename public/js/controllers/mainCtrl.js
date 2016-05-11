@@ -1,4 +1,4 @@
-angular.module('myDea')
+angular.module('mIdea')
 .controller('mainCtrl', function ($scope, mainServ) {
   // $scope.login = function () {
   //   mainServ.login().then(function(response){
@@ -9,7 +9,7 @@ angular.module('myDea')
 
 
   // var socket = io();
-  // 
+  //
   // $('form').submit(function () {
   //   socket.emit('partner', $('#m').val());
   //   $('#m').val('');

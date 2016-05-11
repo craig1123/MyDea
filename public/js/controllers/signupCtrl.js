@@ -1,4 +1,4 @@
-angular.module('myDea')
+angular.module('mIdea')
 .controller('signupCtrl', function ($scope/*, signupServ*/) {
 
   $scope.signup = function(name, email, password, repassword) {

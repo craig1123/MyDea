@@ -1,4 +1,4 @@
-angular.module('myDea', ['ui.router'])
+angular.module('mIdea', ['ui.router', 'ngAnimate', 'ui.bootstrap'])
 
 .config(function ($stateProvider, $urlRouterProvider) {
 

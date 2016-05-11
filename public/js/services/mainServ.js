@@ -1,4 +1,4 @@
-angular.module('myDea')
+angular.module('mIdea')
 .service('mainServ', function ($http) {
   // this.login = function () {
   //   return $http({

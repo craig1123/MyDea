@@ -1,4 +1,4 @@
-angular.module('myDea')
+angular.module('mIdea')
 .controller('loginCtrl', function ($scope) {
 
   $scope.login = function(email, password) {

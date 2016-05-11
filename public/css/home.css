@@ -174,14 +174,45 @@ video {
   border: none;
 }
 
-/*carousel*/
-.content {
-  width: 90%;
-  margin: 20px auto auto auto;
-}
-
-
 /*idea cards*/
+.home-content {
+  padding: 40px 0px;
+}
+.home-content-heading {
+  max-width: 1040px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  padding: 20px;
+}
+.wut {
+  padding-bottom: 20px;
+}
+.featured {
+  padding: 0px 20px;
+  float: left;
+}
+.featured h2 {
+  font-size: 22px;
+  line-height: 30px;
+}
+.see-all {
+  float: right;
+  padding: 0px 20px;
+}
+.btn--small {
+  padding: 7px 10px;
+  border-width: 1px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: .75rem;
+  border-color: #828587;
+  color: #828587;
+}
+.card-content {
+  width: 90%;
+  margin: 40px auto auto auto;
+}
 .card-outer {
   width: 80%;
   height: 500px;
@@ -191,6 +222,7 @@ video {
   margin: auto;
   border: 1px solid #adadad;
   outline: 0;
+  background-color: #74b446
 }
 .card-outer a:focus a:active{
   outline: 0 none;
@@ -210,8 +242,12 @@ video {
 .card-mid {
   padding: 10px;
 }
+.card-username {
+  text-align: center;
+  font-family: fantasy;
+}
 .card-title {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   line-height: 1.25em;
   margin-bottom: 0.25em;
@@ -219,7 +255,16 @@ video {
 .card-title a {
   color: #0F2105;
 }
+.card-description {
+  color: #fff;
+}
 .card-bottom {
+  position: absolute;
+  padding: 45px 10px 10px 10px;
+  width: 100%;
+  bottom: 0;
+}
+.card-rating {
 
 }
 

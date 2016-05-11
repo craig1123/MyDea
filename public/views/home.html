@@ -19,36 +19,32 @@
             or "<a href="http://www.barcinno.com/5-reasons-you-should-share-your-startup-ideas/">5 reasons you should share your startup ideas</a>"
           </p>
           <br>
-          <li><input class="btn--green learn" type="button" value="Learn More" ui-sref="ideas"></li>
+            <li><input class="btn--green learn" type="button" value="Learn More" ui-sref="ideas"></li>
+
+
         </div>
       </div>
     </div>
   </div>
 
-  <!-- carousel -->
-  <section id="features" class="my-slider">
-      <div class="content">
-        <div class="slider responsive">
-          <div>
-            <idea-card><idea-card>
+  <!-- idea cards -->
+  <section class="home-content">
+      <div class="home-content-heading">
+        <div class="wut">
+          <div class="row">
+            <div class="featured">
+              <h2>Featured Ideas</h2>
+            </div>
+            <div class="see-all">
+              <a class="btn btn--border-gray btn--small" ui-sref="ideas">See all</a>
+            </div>
           </div>
-          <div>
-            <idea-card><idea-card>
-          </div>
-          <div>
-            <idea-card><idea-card>
-          </div>
-          <div>
-            <idea-card><idea-card>
-          </div>
-          <div>
-            <idea-card><idea-card>
-          </div>
-          <div>
-            <idea-card><idea-card>
-          </div>
-
         </div>
+      </div>
+      <div class="card-content">
+        <ideacard></ideacard>
+        <ideacard></ideacard>
+        <ideacard></ideacard>
       </div>
     </section>
 
