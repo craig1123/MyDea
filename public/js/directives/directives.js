@@ -20,7 +20,11 @@ angular.module('mIdea')
   .directive("ideacard", function () {
     return {
       restrict: "EA",
-      templateUrl: "./js/directives/ideaCard.html"
+      controller: "ratingCtrl",
+      templateUrl: "./js/directives/ideaCard.html",
+      scope: {
+        idea: "="
+      }
     }
   })
   .directive('myDraggable', ['$document', function($document) {

@@ -104,7 +104,7 @@ footer {
   margin-left: auto;
 }
 .footWords {
-  width: 232px;
+  width: 250px;
   font-weight: 600;
   font-size: 19px;
   font-family: Georgia, serif;
@@ -176,7 +176,7 @@ video {
 
 /*idea cards*/
 .home-content {
-  height: 540px;
+  height: 560px;
   position: relative;
 }
 .home-content-heading {
@@ -212,6 +212,7 @@ video {
 }
 .card-content {
   max-width: 1040px;
+  height: 0px;
   margin-right: auto;
   margin-left: auto;
   position: relative;
@@ -222,17 +223,19 @@ video {
 }
 .card-outer {
   width: 32%;
+  height: 440px;
   position: relative;
   float: left;
   padding-right: 20px;
   padding-left: 20px;
 }
 .card-almost-outer {
-  height: 415px;
+  height: 100%;
   margin-bottom: 10px;
   border: 1px solid #adadad;
   border-radius: 10px;
-  background-color: #74b446
+  background-color: #74b446;
+
 }
 .card-top {
   border-radius: 6px 6px 0 0;
@@ -248,12 +251,13 @@ video {
 }
 .card-mid {
   padding: 10px;
+  height: 74%;
 }
 .card-username {
-  text-align: center;
-  font-family: fantasy;
+  font-family: monospace;
 }
 .card-title {
+  text-align: center;
   font-size: 16px;
   font-weight: bold;
   line-height: 1.25em;
@@ -266,14 +270,11 @@ video {
   color: #fff;
 }
 .card-bottom {
-  position: absolute;
-  padding: 45px 10px 10px 10px;
+  position: relative;
+  padding: 3px 0px 10px 60px;
   width: 100%;
-  bottom: 0;
 }
-.card-rating {
 
-}
 
 /*why share ideas?*/
 .bottom-home-page {

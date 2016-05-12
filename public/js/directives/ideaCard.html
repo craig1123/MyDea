@@ -7,20 +7,25 @@
     </div>
     <div class="card-mid">
       <p class="card-username">
-        Enter name here
+        name
       </p>
       <br>
       <br>
+      <br>
       <h6 class="card-title">
-        <a href="#">title is in link</a>
+        <a href="#">{{idea.title}}</a>
       </h6>
       <p class="card-description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        {{idea.description}}
       </p>
     </div>
     <hr />
     <div class="card-bottom">
-      10 star rating
+      <h4>Rate the mIdea</h4>
+      <uib-rating class="card-rating" ng-model="rate" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+      <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar">
+        {{percent}}%
+      </span>
     </div>
   </div>
 

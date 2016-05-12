@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 
+var ideaCtrl = require('./controllers/ideaCtrl');
 var app = express();
 
 //facebook
@@ -18,6 +19,8 @@ var io = require('socket.io')(http);
 app.use(bodyParser.json());
 app.use(express.static(__dirname + './../public'));
 
+
+//socket.io
 io.on('connection', function (socket) {
   socket.on('userconnected', function (userId) {
 
@@ -32,6 +35,7 @@ io.on('connection', function (socket) {
     socket.emit("response", msg + "whatever")
   })
 })
+
 
 require('./auth/facebook')(passport);
 
@@ -48,10 +52,18 @@ app.get('/login/facebook/callback', passport.authenticate('facebook', {
 }), function(req, res) {
   console.log(req.session);
 });
-
 app.get('/me', function (req, res) {
   res.send(req.user);
 })
+
+//endpoints
+
+//ideas
+app.post('/api/ideas', ideaCtrl.create);
+app.get('/api/ideas', ideaCtrl.read);
+app.get('/api/ideas/:id', ideaCtrl.readById);
+app.put('/api/ideas/:id', ideaCtrl.update);
+app.delete('/api/ideas/:id', ideaCtrl.delete);
 
 //connection to mongoose
 mongoose.set('debug', true);
@@ -65,5 +77,5 @@ mongoose.connection.once("open", function() {
 
 var port = 3000;
 app.listen(port, function () {
-  console.log("port " + port + " hears you");
+  console.log("It's game time on " + port + "!");
 })
