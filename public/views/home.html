@@ -27,13 +27,13 @@
     </div>
   </div>
 
-  <!-- Highest rated idea cards -->
+  <!-- Most Popular idea cards -->
   <section class="home-content border-bottom">
       <div class="home-content-heading">
         <div class="wut">
           <div class="row">
             <div class="featured">
-              <h2>Highest Rated mIdeas</h2>
+              <h2>Most Popular mIdeas</h2>
             </div>
             <div class="see-all">
               <a class="btn btn--border-gray btn--small" ui-sref="ideas">See all</a>
@@ -41,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="card-content" ng-repeat='idea in ideas'>
+      <div class="card-content" ng-repeat='idea in nonShuffleIdeas | limitTo: 3'>
         <ideacard class="cards" idea="idea"></ideacard>
       </div>
     </section>
@@ -60,7 +60,7 @@
           </div>
         </div>
       </div>
-      <div class="card-content" ng-repeat='idea in ideas'>
+      <div class="card-content" ng-repeat="idea in shuffleIdeas | limitTo: 3">
         <ideacard class="cards" idea="idea"></ideacard>
       </div>
     </section>

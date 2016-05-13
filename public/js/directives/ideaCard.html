@@ -21,10 +21,10 @@
     </div>
     <hr />
     <div class="card-bottom">
-      <h4>Rate the mIdea</h4>
-      <uib-rating class="card-rating" ng-model="rate" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
-      <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar">
-        {{percent}}%
+      <h4>Rate the mIdea  --  <b>{{rate}}/10</b></h4>
+      <uib-rating class="card-rating" ng-model="rate" ng-click="updateIdea(idea.id)" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+      <span class="label" ng-class="{'label-warning': fraction<3, 'label-info': fraction>=3 && fraction<7, 'label-success': fraction>=7}" ng-show="overStar">
+        {{fraction}}/10
       </span>
     </div>
   </div>

@@ -11,6 +11,16 @@ a:hover{
   text-decoration: none;
   color: #62d18f
 }
+textarea {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: #e8f6ff 0 0 5px;
+  border: 1px solid #bfbfbf;
+  outline: none;
+  color: black;
+  margin: 0;
+  width: 100%;
+}
 
 /*/////////////////////////////Navigation bar//////////////////////////*/
 
@@ -36,11 +46,13 @@ a:hover{
 }
 .primary-menu-link {
   float: left;
-  padding: 25px 15px;
+  padding: 22px 15px;
   font-size: 14px;
   font-weight: bold;
 }
-
+.primary-menu-link:hover {
+  background-color: #f7f7f7;
+}
 .header-search {
   border-left: solid 1px #D9D9DE;
   color: #828587;
@@ -50,8 +62,6 @@ a:hover{
   overflow: hidden;
   white-space: nowrap;
   float: left;
-  /*padding: 23px 65px;
-  width: 33%;*/
 }
 .header-search input {
   box-sizing: border-box;
@@ -66,19 +76,18 @@ a:hover{
   margin-right: 45px;
 }
 .logged-out-link {
-  padding: 25px 15px;
+  padding: 21px 15px;
   float: right;
-}
-.logged-out-link a{
   color: #004bde;
 }
-.logged-out-link a:hover {
-  background-color: rgb(240, 240, 240);
+.logged-out-link:hover{
+  background-color: #f7f7f7;
+  color: #828587;
 }
 
 /*///////////////////////////////Every View/////////////////*/
 .view {
-  z-index: -1;
+  z-index: -2;
   background: linear-gradient(to bottom, #f7f7f2, #c2e5a2);
   width: 100%;
 }
@@ -223,7 +232,7 @@ video {
 }
 .card-outer {
   width: 32%;
-  height: 440px;
+  height: 400px;
   position: relative;
   float: left;
   padding-right: 20px;
@@ -271,7 +280,7 @@ video {
 }
 .card-bottom {
   position: relative;
-  padding: 3px 0px 10px 60px;
+  padding: 3px 0px 10px 14px;
   width: 100%;
 }
 
@@ -293,6 +302,20 @@ video {
 }
 .learn {
   width: 126px;
+}
+
+
+/*/////////////////////////////////create ideas/////////////////////*/
+.create-box {
+  max-width: 600px;
+  margin: auto;
+}
+.what-how-why {
+  height: 8em;
+}
+.btn-create {
+  width: 120px;
+  float: right;
 }
 
 
@@ -359,6 +382,7 @@ li input {
 }
 .btn--green:hover{
   background-color: #74b446;
+  color: #fff;
 }
 .terms {
   font-size: 12px;
@@ -394,6 +418,7 @@ li input {
 }
 .btn--blue:hover {
   background-color: #234896;
+  color: #fff;
 }
 .already-account {
   background-color: rgba(217,217,222,0.2);

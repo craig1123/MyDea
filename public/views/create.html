@@ -1,3 +1,31 @@
-<div class="">
-  <h1>Click here to create an idea</h1>
-</div>
+<section>
+  <div class="sign">
+    <div class="create-box">
+      <div class="sign-form">
+        <div class="sign-frame">
+          <h2 class="sign-title">Create your mIdea</h2>
+          <form>
+            <fieldset idea="idea">
+              <ol>
+                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="title" ng-model="idea.title" required></li>
+
+                <li class="mb2"><textarea autofocus="autofocus" type="text" placeholder="brief description of idea" ng-model="idea.description" required></textarea></li>
+
+                <li class="mb2"><textarea class="what-how-why" autofocus="autofocus" type="text" placeholder="What is it?" ng-model="idea.what" required></textarea></li>
+
+                <li class="mb2"><textarea class="what-how-why" autofocus="autofocus" type="text" placeholder="How does it work?" ng-model="idea.how" required></textarea></li>
+
+                <li class="mb2"><textarea class="what-how-why" autofocus="autofocus" type="text" placeholder="Why?" ng-model="idea.why" required></textarea></li>
+
+                <li class="mb2-signup">
+                  <br>
+                  <input class="btn btn--green btn--block submit btn-create" type="button" value="Create mIdea!" ng-click="postIdea(idea)">
+                </li>
+              </ol>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

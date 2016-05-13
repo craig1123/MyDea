@@ -17,6 +17,7 @@ angular.module('mIdea', ['ui.router', 'ngAnimate', 'ui.bootstrap'])
     templateUrl: './../views/signUp.html'
   }).state('create', {
     url: '/create',
+    controller: 'createCtrl',
     templateUrl: './../views/create.html'
   }).state('ideas', {
     url: '/ideas',

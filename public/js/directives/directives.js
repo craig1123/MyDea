@@ -2,6 +2,7 @@ angular.module('mIdea')
   .directive("navBar", function () {
     return {
       restrict: "EA",
+      controller: ""
       templateUrl: "./js/directives/navBar.html"
     }
   })
