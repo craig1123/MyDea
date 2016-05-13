@@ -2,6 +2,8 @@ angular.module('mIdea', ['ui.router', 'ngAnimate', 'ui.bootstrap'])
 
 .config(function ($stateProvider, $urlRouterProvider) {
 
+  $urlRouterProvider.otherwise('/home');
+
   $stateProvider
     .state('home', {
     url: '/home',
@@ -35,5 +37,21 @@ angular.module('mIdea', ['ui.router', 'ngAnimate', 'ui.bootstrap'])
     url: '/giveback',
     templateUrl: './../views/giveBack.html'
   })
-  $urlRouterProvider.otherwise('/home');
-})
+
+
+    .state('profile', {
+      url: "/logged-in",
+      templateUrl: "./../views/loggedIn.html",
+      controller: 'profileCtrl',
+      resolve: {
+        user: function(mainService, $state) {
+          return mainService.getUser().then(function(response) {
+            return response.data;
+          }).catch(function(err) {
+            $state.go('login');
+          });
+        }
+      }
+    });
+
+});

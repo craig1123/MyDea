@@ -7,13 +7,13 @@
           <form>
             <fieldset>
               <ol>
-                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="name" ng-model="name" required></li>
-                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="Email" ng-model="email" required></li>
-                <li class="mb2"><input autofocus="autofocus" type='password' placeholder="Password" ng-model="password" required></li>
+                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="name" ng-model="newUser.name" required></li>
+                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="Email" ng-model="newUser.email" required></li>
+                <li class="mb2"><input autofocus="autofocus" type='password' placeholder="Password" ng-model="newUser.password" required></li>
                 <li class="mb2"><input autofocus="autofocus" type="password" placeholder="Re-enter password" ng-model="repassword" required></li>
                 <li class="mb2-signup">
                   <br>
-                  <input class="btn btn--green btn--block submit" type="button" value="Sign Up!" ng-click="signup(name, email, password, repassword)">
+                  <input class="btn btn--green btn--block submit" type="button" value="Sign Up!" ng-click="register(newUser.name, newUser.email, newUser.password, repassword)">
                   <br>
                   <br>
                   <p class="terms">

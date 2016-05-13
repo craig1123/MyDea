@@ -1,7 +1,8 @@
 angular.module('mIdea')
-.controller('signupCtrl', function ($scope/*, signupServ*/) {
+.controller('signupCtrl', function ($scope, mainService) {
 
-  $scope.signup = function(name, email, password, repassword) {
+
+  $scope.register = function(name, email, password, repassword) {
     if (!name) {
         alert('Please enter a name');
       }
@@ -15,13 +16,11 @@ angular.module('mIdea')
       alert('Your passwords do not match')
     }
     else if (name && email && password && repassword) {
-          // signupServ.sendEmail(name, email, password);
-          $scope.email = '';
-          $scope.name = '';
-          $scope.password = '';
-          $scope.repassword = '';
 
-          //redirect to home
-        }
+      mainService.register($scope.newUser).then(function(response) {
+          console.log(response.data);
+      });
     }
+  };
+
 })

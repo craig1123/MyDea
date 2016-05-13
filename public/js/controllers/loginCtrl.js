@@ -1,20 +1,18 @@
 angular.module('mIdea')
-.controller('loginCtrl', function ($scope) {
+    .controller('loginCtrl', function($scope, mainService, $state) {
 
   $scope.login = function(email, password) {
       if (!email) {
           alert('Please enter a valid email.');
-        }
-      else if (!password) {
+      } else if (!password) {
           alert('Please enter a password.');
-      }
-      else if (email && password) {
-            // loginServ.sendEmail(email, password);
-            $scope.email = '';
-            $scope.password = '';
+      } else if (email && password) {
 
-            //redirect to home
-          }
-      }
+          mainService.login($scope.credentials).then(function(response) {
+            console.log(response.data);
+            $state.go('profile');
+          })
+        }
+    }
 
 })

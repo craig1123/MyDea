@@ -4,7 +4,19 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 
+//Controllers
+var userCtrl = require('./controllers/userCtrl');
 var ideaCtrl = require('./controllers/ideaCtrl');
+
+//Services
+var local = require('./services/local');
+
+//Policies for local-Auth
+var isAuthed = function (req, res, next) {
+  if (!req.isAuthenticated()) return res.status(401).send();
+  return next();
+}
+
 var app = express();
 
 //facebook
@@ -16,9 +28,12 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 
+
 app.use(bodyParser.json());
 app.use(express.static(__dirname + './../public'));
-
+app.use(session({secret: keys.SESSION_SECRET}))
+app.use(passport.initialize())
+app.use(passport.session())
 
 //socket.io
 io.on('connection', function (socket) {
@@ -36,13 +51,8 @@ io.on('connection', function (socket) {
   })
 })
 
-
-require('./auth/facebook')(passport);
-
-app.use(session({secret: 'I like turtles'}))
-app.use(passport.initialize())
-app.use(passport.session())
-
+//requiring facebook auth
+require('./services/facebook')(passport);
 
 //facebook routes
 app.get('/login/facebook', passport.authenticate('facebook'));
@@ -65,6 +75,22 @@ app.get('/api/ideas/:id', ideaCtrl.readById);
 app.put('/api/ideas/:id', ideaCtrl.update);
 app.delete('/api/ideas/:id', ideaCtrl.delete);
 
+//local-Auth
+app.post('/users', userCtrl.register);
+app.get('/me', isAuthed, userCtrl.me);
+app.put('/users/:_id', isAuthed, userCtrl.update);
+
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/me'
+}));
+app.get('/logout', function(req, res, next) {
+  req.logout();
+  return res.status(200).send('logged out');
+});
+
+
+
+
 //connection to mongoose
 mongoose.set('debug', true);
 mongoose.connect('mongodb://localhost:27017/ecommerce', function (err) {
@@ -75,7 +101,7 @@ mongoose.connection.once("open", function() {
 });
 
 
-var port = 3000;
+var port = 4000;
 app.listen(port, function () {
   console.log("It's game time on " + port + "!");
 })

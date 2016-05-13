@@ -1,5 +1,5 @@
 angular.module('mIdea')
-.controller('mainCtrl', function ($scope, mainServ) {
+.controller('mainCtrl', function ($scope, mainService) {
   // $scope.login = function () {
   //   mainServ.login().then(function(response){
   //     console.log(response);
