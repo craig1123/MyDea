@@ -5,18 +5,21 @@ angular.module('mIdea')
         return $http.get('/api/ideas').then(function (response) {
             return response.data
           });
-      },
-      this.updateIdea = function () {
-        return $http.update('/api/idea/' + id).then(function (res) {
-          console.log(res);
+      };
+      this.updateIdea = function (id, rating) {
+        return $http({
+          method: "PUT",
+          url: "/api/ideas/" + id,
+          data: {rating:rating}
+        }).then(function (res) {
           return res.data
         })
-      }
+      };
       this.delete = function (id) {
         return $http.delete('/api/ideas/' + id).then(function (response) {
             return response.data
           });
-      }
+      };
 
 
 })

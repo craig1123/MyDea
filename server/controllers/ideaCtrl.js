@@ -20,8 +20,8 @@ module.exports = {
   update: function (req, res) {
     if (!req.params.id) {
       return res.status(400).send('id query needed');
-    }
-    Idea.findByIdAndUpdate(req.params.id, req.body, function (err, i) {
+    } console.log(req.body);
+    Idea.findByIdAndUpdate(req.params.id, {$push:{"rating":req.body.rating}}, function (err, i) {
         res.send(i);
     });
   },

@@ -57,7 +57,8 @@ textarea {
   border-left: solid 1px #D9D9DE;
   color: #828587;
   height: 100%;
-  padding: 24px 0 18px 24px;
+  width: 160px;
+  padding: 20px 0 18px 20px;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
@@ -67,20 +68,21 @@ textarea {
   box-sizing: border-box;
   font-size: 16px;
   line-height: 17px;
+
   box-shadow: none;
   border: none;
   outline: none;
   color: black;
 }
 .nav-right {
-  margin-right: 45px;
+  margin-right: 25px;
 }
-.logged-out-link {
-  padding: 21px 15px;
+.nav-sign-up {
+  padding: 21px 10px;
   float: right;
   color: #004bde;
 }
-.logged-out-link:hover{
+.nav-sign-up:hover {
   background-color: #f7f7f7;
   color: #828587;
 }
@@ -185,7 +187,7 @@ video {
 
 /*idea cards*/
 .home-content {
-  height: 560px;
+  height: 500px;
   position: relative;
 }
 .home-content-heading {
@@ -232,7 +234,7 @@ video {
 }
 .card-outer {
   width: 32%;
-  height: 400px;
+  height: 375px;
   position: relative;
   float: left;
   padding-right: 20px;
@@ -260,7 +262,7 @@ video {
 }
 .card-mid {
   padding: 10px;
-  height: 74%;
+  height: 67%;
 }
 .card-username {
   font-family: monospace;
@@ -280,7 +282,7 @@ video {
 }
 .card-bottom {
   position: relative;
-  padding: 3px 0px 10px 14px;
+  padding: 0px 0px 10px 14px;
   width: 100%;
 }
 
@@ -306,8 +308,21 @@ video {
 
 
 /*/////////////////////////////////create ideas/////////////////////*/
+.create-screen {
+  height: 1030px;
+  width: 100%;
+}
+.create-two {
+  width: 95%;
+  margin: auto;
+}
+.create-outer {
+  float: left;
+  padding: 25px;
+  width: 530px;
+  margin: 50px 5px 0px 250px;
+}
 .create-box {
-  max-width: 600px;
   margin: auto;
 }
 .what-how-why {
@@ -317,7 +332,67 @@ video {
   width: 120px;
   float: right;
 }
+/*descriptions of each input*/
+.popup-box{
+  float: left;
+  height: 810px;
+  width: 300px;
+  margin-top: 50px;
+}
+.arrow_box {
+	position: relative;
+	background: #8EC555;
+	border: 1px solid #D9D9DE;
+  margin-top: 30px;
+}
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: "";
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	pointer-events: none;
+}
 
+.arrow_box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #8EC555;
+	border-width: 27px;
+	margin-top: -27px;
+}
+.arrow_box:before {
+	border-color: rgba(217, 217, 222, 0);
+	border-right-color: #D9D9DE;
+	border-width: 28px;
+	margin-top: -28px;
+}
+.writing {
+  text-align: center;
+  color: #fff;
+  padding: 5px
+}
+.input-title {
+  margin-top: 130px;
+  display: none
+}
+.input-description {
+  margin-top: 185px;
+  display: none;
+}
+.input-what {
+  margin-top: 300px;
+  display: none;
+}
+.input-how {
+  margin-top: 450px;
+  display: none;
+}
+.input-why {
+  margin-top: 580px;
+  display: none;
+}
 
 /*/////////////////////////////sign-up and login///////////////////////*/
 .sign {

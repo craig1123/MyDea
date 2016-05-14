@@ -1,3 +1,4 @@
+<nav-bar></nav-bar>
 <section>
   <div class="sign">
     <div class="sign-box">
@@ -7,13 +8,14 @@
           <form>
             <fieldset>
               <ol>
-                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="name" ng-model="newUser.name" required></li>
-                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="Email" ng-model="newUser.email" required></li>
+                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="First name" ng-model="newUser.name.first" required></li>
+                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="Last name" ng-model="newUser.name.last" required></li>
+                <li class="mb2"><input autofocus="autofocus" type="email" placeholder="Email" ng-model="newUser.email" required></li>
                 <li class="mb2"><input autofocus="autofocus" type='password' placeholder="Password" ng-model="newUser.password" required></li>
                 <li class="mb2"><input autofocus="autofocus" type="password" placeholder="Re-enter password" ng-model="repassword" required></li>
                 <li class="mb2-signup">
                   <br>
-                  <input class="btn btn--green btn--block submit" type="button" value="Sign Up!" ng-click="register(newUser.name, newUser.email, newUser.password, repassword)">
+                  <input class="btn btn--green btn--block submit" type="submit" value="Sign Up!" ng-click="register(newUser.password, repassword)">
                   <br>
                   <br>
                   <p class="terms">

@@ -9,17 +9,10 @@ angular.module('mIdea')
                     ideas.push(results[i]);
                 }
                 $scope.shuffleIdeas = $scope.shuffle(ideas);
+                $scope.findTopThree($scope.nonShuffleIdeas);
             })
         }
         $scope.getIdeas();
-
-
-        $scope.updateIdea = function(id) {
-            homeServ.updateIdea(id).then(function(res) {
-                console.log(res);
-            })
-        }
-
 
         $scope.shuffle = function(array) {
             var m = array.length,
@@ -39,21 +32,22 @@ angular.module('mIdea')
         $scope.findTopThree = function(array) {
             for (var i = 0; i < array.length; i++) {
                 var total = 0;
-                var number = array.length
-                for (var j = 0; j < array[i].length; j++) {
-                    total += array[i].rating[j]
+                var number = array[i].rating.length;
+                for (var j = 0; j < array[i].rating.length; j++) {
+                    total += parseInt(array[i].rating[j], 10);
                 }
                 var avg = total / number;
                 array[i].avg = avg;
             }
             array = bubbleSort(array);
-            $scope.nonShuffleIdeas = array.splice(0, 3);
+            $scope.nonShuffleIdeas = array;
         }
 
         function bubbleSort(theArray) {
-          for (var i = theArray.length; i >= 0; i--) {
-            for (var j = 0; j <= i; j++) {
-                if (theArray[j + 1].rating < theArray[j].rating) {
+
+          for (var i = theArray.length - 1; i >= 0; i--) {
+            for (var j = 0; j < i; j++) {
+                if (theArray[j + 1].avg > theArray[j].avg) {
                     var temp = theArray[j];
                     theArray[j] = theArray[j + 1];
                     theArray[j + 1] = temp;

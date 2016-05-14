@@ -1,3 +1,4 @@
+<nav-bar></nav-bar>
 <section>
   <div class="sign">
     <div class="sign-box">
@@ -7,11 +8,11 @@
           <form>
             <fieldset>
               <ol>
-                <li class="mb2"><input autofocus="autofocus" type="text" placeholder="Email" ng-model="credentials.email" required></li>
+                <li class="mb2"><input autofocus="autofocus" type="email" placeholder="Email" ng-model="credentials.email" required></li>
                 <li class="mb2"><input autofocus="autofocus" type="password" placeholder="Password" ng-model="credentials.password" required></li>
                 <li class="mb2-signup">
                   <br>
-                  <input class="btn btn--green btn--block submit" type="button" value="Log in!" ng-click="login(credentials.email, credentials.password)">
+                  <input class="btn btn--green btn--block submit" type="submit" value="Log in!" ng-click="login(credentials.email, credentials.password)">
                 </li>
               </ol>
             </fieldset>
