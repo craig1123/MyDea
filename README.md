@@ -1,2 +1,2 @@
-# MyDea
+# mIdea
 awesome website
