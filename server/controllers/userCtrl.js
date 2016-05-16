@@ -22,5 +22,19 @@ module.exports = {
       if (err) next(err);
       res.status(200).send('user updated');
     });
+
+  },
+  read: function (req, res) {
+    User.find(req.query, function (err, i) {
+      res.send(i);
+    })
+  },
+  delete: function (req, res) {
+    if(!req.params.id){
+        return res.status(400).send('id query needed');
+    }
+    Idea.findByIdAndRemove({_id: req.params.id}, function (err, i) {
+      res.send(i);
+    });
   }
 };

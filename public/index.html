@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/home.css">
   </head>
-  <body ng-controller="mainCtrl">
+  <body>
 
     <div class="view">
       <ui-view></ui-view>
@@ -20,6 +20,8 @@
 
     <footbar></footbar>
   </body>
+
+
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
@@ -27,18 +29,40 @@
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+
   <script src="./js/app.js"></script>
+
   <script src="./js/controllers/mainCtrl.js"></script>
   <script src="./js/controllers/signupCtrl.js"></script>
   <script src="./js/controllers/loginCtrl.js"></script>
   <script src="./js/controllers/homeCtrl.js"></script>
   <script src="./js/controllers/createCtrl.js"></script>
-  <script src="./js/controllers/profileCtrl.js"></script>
+  <script src="./js/controllers/logoutCtrl.js"></script>
+
   <script src="./js/services/mainServ.js"></script>
   <script src="./js/services/homeServ.js"></script>
   <script src="./js/services/createServ.js"></script>
+
   <script src="./js/directives/directives.js"></script>
   <script src="./js/directives/ratingCtrl.js"></script>
   <script src="./js/directives/searchCtrl.js"></script>
 
+
+  <!-- facebook -->
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1585387298419900',
+      xfbml      : true,
+      version    : 'v2.6'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+  </script>
 </html>

@@ -1,5 +1,5 @@
 angular.module('mIdea')
-.controller('signupCtrl', function ($scope, $state, mainService) {
+.controller('signupCtrl', function ($scope, $state, mainServ) {
 
 
   $scope.register = function(password, repassword) {
@@ -7,7 +7,7 @@ angular.module('mIdea')
         alert('Your passwords do not match')
       }
     else {
-      mainService.register($scope.newUser).then(function(response) {
+      mainServ.register($scope.newUser).then(function(response) {
           $state.go('profile');
       });
     }

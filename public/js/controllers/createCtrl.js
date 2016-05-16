@@ -1,13 +1,13 @@
 angular.module('mIdea')
 .controller('createCtrl', function ($scope, $state, createServ) {
 
-  // $scope.getIdeas = function () {
-  //   createServ.getIdeas().then(function (results) {
-  //     console.log(results);
-  //     $scope.ideas = results;
-  //   })
-  // }
-  // $scope.getIdeas();
+  // $scope.user = user;
+  //
+  // $scope.logout = function () {
+  //   mainServ.logout().then(function(response) {
+  //     $state.go('logout');
+  //   });
+  // };
 
   $scope.postIdea = function (idea) {
     createServ.postIdea(idea)
@@ -15,6 +15,14 @@ angular.module('mIdea')
       $state.go('ideas')
     })
   }
+
+  // $scope.getIdeas = function () {
+  //   createServ.getIdeas().then(function (results) {
+  //     console.log(results);
+  //     $scope.ideas = results;
+  //   })
+  // }
+  // $scope.getIdeas();
 
   $(document).ready(function () {
     $('#title').on('mouseenter', function () {
@@ -37,7 +45,7 @@ angular.module('mIdea')
     }).on('mouseleave', function () {
       $('.input-how').hide();
     })
-    $('#why').on('mouseenter', function () {
+    $('#why, .popup-box-two, #why-pop').on('mouseenter', function () {
       $('.input-why').show(100);
     }).on('mouseleave', function () {
       $('.input-why').hide();

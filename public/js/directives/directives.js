@@ -6,6 +6,13 @@ angular.module('mIdea')
       templateUrl: "./js/directives/navBar.html"
     }
   })
+  .directive("navbarGuest", function () {
+    return {
+      restrict: "EA",
+      controller: "searchCtrl",
+      templateUrl: "./js/directives/navbarGuest.html"
+    }
+  })
   .directive("vidHead", function () {
     return {
       restrict: "EA",

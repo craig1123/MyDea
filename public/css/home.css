@@ -55,6 +55,7 @@ textarea {
 }
 .header-search {
   border-left: solid 1px #D9D9DE;
+  margin-left: 25px;
   color: #828587;
   height: 100%;
   width: 160px;
@@ -68,24 +69,34 @@ textarea {
   box-sizing: border-box;
   font-size: 16px;
   line-height: 17px;
-
   box-shadow: none;
   border: none;
   outline: none;
   color: black;
 }
 .nav-right {
-  margin-right: 25px;
+  margin-right: 50px;
+  font-size: 21px;
+  font-weight: bold;
 }
 .nav-sign-up {
-  padding: 21px 10px;
+  font-size: 201x;
+  padding: 19px 13px;
   float: right;
   color: #004bde;
 }
 .nav-sign-up:hover {
   background-color: #f7f7f7;
   color: #828587;
+  cursor: pointer;
 }
+.nav-hello {
+  padding: 19px 13px;
+  float: right;
+  color: #828587;
+  font-size:24px;
+}
+
 
 /*///////////////////////////////Every View/////////////////*/
 .view {
@@ -125,7 +136,16 @@ footer {
   margin-top: 10px;
 }
 .copyright {
-  width: 600px;
+  width: 250px;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  display: inline;
+  float: left;
+  margin-top: 14px;
+  margin-left: 25px;
+}
+.fb-share {
+  width: 250px;
   font-size: 13px;
   font-family: Georgia, serif;
   display: inline;
@@ -262,7 +282,7 @@ video {
 }
 .card-mid {
   padding: 10px;
-  height: 67%;
+  height: 60%;
 }
 .card-username {
   font-family: monospace;
@@ -285,7 +305,9 @@ video {
   padding: 0px 0px 10px 14px;
   width: 100%;
 }
+.fb-like {
 
+}
 
 /*why share ideas?*/
 .bottom-home-page {
@@ -311,16 +333,14 @@ video {
 .create-screen {
   height: 1030px;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 .create-two {
-  width: 95%;
-  margin: auto;
+  width: 100%;
 }
 .create-outer {
-  float: left;
-  padding: 25px;
-  width: 530px;
-  margin: 50px 5px 0px 250px;
+  padding: 60px 20px;
 }
 .create-box {
   margin: auto;
@@ -333,11 +353,15 @@ video {
   float: right;
 }
 /*descriptions of each input*/
-.popup-box{
-  float: left;
+.popup-box-one {
   height: 810px;
-  width: 300px;
-  margin-top: 50px;
+  width: 80%;
+  margin-left: 15px;
+}
+.popup-box-two {
+  height: 810px;
+  width: 80%;
+  margin-right: 15px;
 }
 .arrow_box {
 	position: relative;
@@ -346,6 +370,34 @@ video {
   margin-top: 30px;
 }
 .arrow_box:after, .arrow_box:before {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: "";
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	pointer-events: none;
+}
+.arrow_box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-left-color: #8EC555;
+	border-width: 27px;
+	margin-top: -27px;
+}
+.arrow_box:before {
+	border-color: rgba(217, 217, 222, 0);
+	border-left-color: #D9D9DE;
+	border-width: 28px;
+	margin-top: -28px;
+}
+.arrow_box-two {
+	position: relative;
+	background: #8EC555;
+	border: 1px solid #D9D9DE;
+  margin-top: 30px;
+}
+.arrow_box-two:after, .arrow_box-two:before {
 	right: 100%;
 	top: 50%;
 	border: solid transparent;
@@ -355,14 +407,13 @@ video {
 	position: absolute;
 	pointer-events: none;
 }
-
-.arrow_box:after {
+.arrow_box-two:after {
 	border-color: rgba(255, 255, 255, 0);
 	border-right-color: #8EC555;
 	border-width: 27px;
 	margin-top: -27px;
 }
-.arrow_box:before {
+.arrow_box-two:before {
 	border-color: rgba(217, 217, 222, 0);
 	border-right-color: #D9D9DE;
 	border-width: 28px;
@@ -374,23 +425,23 @@ video {
   padding: 5px
 }
 .input-title {
-  margin-top: 130px;
+  margin-top: 155px;
   display: none
 }
 .input-description {
-  margin-top: 185px;
+  margin-top: 220px;
   display: none;
 }
 .input-what {
-  margin-top: 300px;
+  margin-top: 325px;
   display: none;
 }
 .input-how {
-  margin-top: 450px;
+  margin-top: 475px;
   display: none;
 }
 .input-why {
-  margin-top: 580px;
+  margin-top: 620px;
   display: none;
 }
 
@@ -508,4 +559,17 @@ li input {
 }
 .already-account a:hover {
   background-color: rgb(240, 240, 240);
+}
+
+/*///////////////////////////Log out screen////////////////////////////////*/
+.logout-screen {
+
+}
+.see-you-soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:300px;
+  font-size: 37px;
+  color: #3F51C5;
 }

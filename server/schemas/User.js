@@ -1,18 +1,24 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
-var User = new mongoose.Schema({
-  name: {
-    first: {type: String, required: true},
-    last: {type: String}
-  },
-  email: { type: String, index: true, trim: true, unique: true, required: true},
-  password: { type: String, required: true},
-  admin: {type: Boolean, default: false}
-  // img: {}
+var userSchema = new mongoose.Schema({
+    name: {
+      first: {type: String, required: true},
+      last: {type: String}
+    },
+    email: { type: String, index: true, trim: true, unique: true, required: true},
+    password: { type: String, required: true},
+    admin: {type: Boolean, default: false},
+    // img: {}
+  facebook: {
+    id: String,
+    token: String,
+    email: String,
+    name: String
+  }
 });
 
-User.pre('save', function(next) {
+userSchema.pre('save', function(next) {
 	var user = this;
 	if (!user.isModified('password'))	return next();
   var salt = bcrypt.genSaltSync(10);
@@ -21,9 +27,9 @@ User.pre('save', function(next) {
   return next(null, user);
 });
 
-User.methods.verifyPassword = function(reqBodyPassword) {
+userSchema.methods.verifyPassword = function(reqBodyPassword) {
   var user = this;
   return bcrypt.compareSync(reqBodyPassword, user.password);
 };
 
-module.exports = mongoose.model('User', User);
+module.exports = mongoose.model('User', userSchema);

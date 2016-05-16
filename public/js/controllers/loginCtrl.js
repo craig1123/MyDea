@@ -1,5 +1,5 @@
 angular.module('mIdea')
-    .controller('loginCtrl', function($scope, mainService, $state) {
+    .controller('loginCtrl', function($scope, mainServ, $state) {
 
         $scope.login = function(email, password) {
             if (!email) {
@@ -8,7 +8,7 @@ angular.module('mIdea')
                 alert('Please enter a password.');
             } else if (email && password) {
 
-                mainService.login($scope.credentials).then(function(response) {
+                mainServ.login($scope.credentials).then(function(response) {
                     $state.go('profile');
                 })
             }

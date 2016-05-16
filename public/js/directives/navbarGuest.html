@@ -4,14 +4,10 @@
       <img class="logo" src="./img/logo.png" alt="MyDea" />
     </div>
     <div class="header-name">
-      <a ui-sref="profile">mIdea</a>
+      <a ui-sref="home">mIdea</a>
     </div>
     <nav aria-labelledby="main-navigation" class="left" role="navigation">
-      <ul class="primary-menu">
-        <a ui-sref="create"><li class="primary-menu-link">Create</li></a>
-        <a ui-sref="ideas"><li class="primary-menu-link">Ideas</li></a>
-        <a ui-sref="collaborate"><li class="primary-menu-link">Collaborate</li></a>
-      </ul>
+
       <form class="header-search" role="search">
         <i class="fa fa-search" aria-hidden="true"></i>
         <input class="" placeholder="Search Ideas">
@@ -19,8 +15,8 @@
     </nav>
     <nav aria-labelledby="user-navigation" class="nav-right" role="navigation">
       <ul>
-        <a class="nav-sign-up" ng-click="logout()">Logout</a>
-        <h3><li class="nav-hello">{{user.name.first}}</li></h3>
+        <a ui-sref="signUp"><li class="nav-sign-up">Sign up </li></a>
+        <a ui-sref="login"><li class="nav-sign-up"> Log in</li></a>
       </ul>
     </nav>
 
