@@ -8,8 +8,8 @@ var ideaSchema = new Schema({
   what: {type: String, required: true},
   how: {type: String, required: true},
   why: {type: String, required: true},
-  rating: [{type: Number}]
-  // img: {data: Buffer, contentType: String}
+  rating: [{type: Number}],
+  user: {type: Schema.Types.ObjectId, ref: 'User'}
 })
 
 module.exports = mongoose.model('Idea', ideaSchema)

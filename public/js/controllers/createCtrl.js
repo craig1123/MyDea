@@ -1,13 +1,7 @@
 angular.module('mIdea')
-.controller('createCtrl', function ($scope, $state, createServ) {
+.controller('createCtrl', function ($scope, $state, createServ, user) {
 
-  // $scope.user = user;
-  //
-  // $scope.logout = function () {
-  //   mainServ.logout().then(function(response) {
-  //     $state.go('logout');
-  //   });
-  // };
+  $scope.user = user;
 
   $scope.postIdea = function (idea) {
     createServ.postIdea(idea)

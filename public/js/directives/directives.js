@@ -31,7 +31,8 @@ angular.module('mIdea')
       controller: "ratingCtrl",
       templateUrl: "./js/directives/ideaCard.html",
       scope: {
-        idea: "="
+        idea: "=",
+        user: '='
       }
     }
   })

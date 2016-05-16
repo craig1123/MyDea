@@ -21,7 +21,37 @@ textarea {
   margin: 0;
   width: 100%;
 }
-
+li {
+  list-style: none;
+}
+fieldset {
+  margin-bottom: 20px;
+  border: none;
+}
+fieldset ol {
+  list-style: none;
+}
+fieldset ol li {
+  list-style: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+li input {
+  border: none;
+}
+li input {
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 17px;
+  border-radius:10px;
+  box-shadow: #e8f6ff 0 0 5px;
+  border: 1px solid #bfbfbf;
+  outline: none;
+  color: black;
+  margin: 0;
+  width: 100%;
+}
 /*/////////////////////////////Navigation bar//////////////////////////*/
 
 .nav-bar {
@@ -91,12 +121,17 @@ textarea {
   cursor: pointer;
 }
 .nav-hello {
+  padding: 6px 13px;
+  float: right;
+  color: #828587;
+  font-size:24px;
+}
+.nav-hello-name {
   padding: 19px 13px;
   float: right;
   color: #828587;
   font-size:24px;
 }
-
 
 /*///////////////////////////////Every View/////////////////*/
 .view {
@@ -270,7 +305,7 @@ video {
 }
 .card-top {
   border-radius: 6px 6px 0 0;
-  overflow: hidden;
+  /*overflow: hidden;*/
   position: relative;
 }
 .card-top-link {
@@ -289,7 +324,7 @@ video {
 }
 .card-title {
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 1.25em;
   margin-bottom: 0.25em;
@@ -328,6 +363,17 @@ video {
   width: 126px;
 }
 
+/*Want to do more?*/
+.when-sign-up {
+
+  width: 430px;
+  margin: auto;
+  font-size: 25px;
+}
+.possibilities li {
+  text-align: left;
+  list-style: square;
+}
 
 /*/////////////////////////////////create ideas/////////////////////*/
 .create-screen {
@@ -468,40 +514,11 @@ video {
   margin-bottom: 30px;
   display: block;
 }
-li {
-  list-style: none;
-}
-fieldset {
-  margin-bottom: 20px;
-  border: none;
-}
-fieldset ol {
-  list-style: none;
-}
-fieldset ol li {
-  list-style: none;
-  list-style-type: none;
-  margin-left: 0;
-}
-li input {
-  border: none;
-}
+
 .mb2 {
   margin-bottom: 20px;
 }
-li input {
-  padding: 10px;
-  box-sizing: border-box;
-  font-size: 16px;
-  line-height: 17px;
-  border-radius:10px;
-  box-shadow: #e8f6ff 0 0 5px;
-  border: 1px solid #bfbfbf;
-  outline: none;
-  color: black;
-  margin: 0;
-  width: 100%;
-}
+
 .btn--green {
   background-color: #1dcf00;
   color: #fff;

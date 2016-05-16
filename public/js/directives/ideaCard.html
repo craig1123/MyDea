@@ -1,14 +1,14 @@
 <div class="card-outer">
   <div class="card-almost-outer">
-    <div class="card-top">picture
+    <div class="card-top">
       <a class="card-top-link" href="#">
-        <img src="" alt="" />
+      <img src="{{idea.user.facebook.pic}}" alt="" />
+      <p class="card-username">
+        {{idea.user.name.first}}  {{idea.user.name.last}}{{idea.user.facebook.name}}
+      </p>
       </a>
     </div>
     <div class="card-mid">
-      <p class="card-username">
-        name
-      </p>
 
       <br>
       <br>
@@ -29,7 +29,7 @@
         <span class="label" ng-class="{'label-warning': fraction<3, 'label-info': fraction>=3 && fraction<7, 'label-success': fraction>=7}" ng-show="overStar">
           {{fraction}}/10
         </span>
-      
+
       </div>
 
     </div>

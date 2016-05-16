@@ -1,6 +1,7 @@
 var express = require('express');
 var session = require('express-session');
 var mongoose = require('mongoose');
+var MongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
 var passport = require('passport');
 
@@ -31,7 +32,12 @@ var io = require('socket.io')(http);
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + './../public'));
-app.use(session({secret: keys.SESSION_SECRET}))
+app.use(session({
+  secret: keys.SESSION_SECRET,
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection
+  }) //mongoose sessions to store users.
+}))
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -57,8 +63,8 @@ require('./services/facebook')(passport);
 //facebook routes
 app.get('/login/facebook', passport.authenticate('facebook', {scope: 'email'}));
 app.get('/login/facebook/callback', passport.authenticate('facebook', {
-  successRedirect: '/profile',
-  failureRedirect: '/login'
+  successRedirect: '/#/logged-in',
+  failureRedirect: '/#/login'
 }), function(req, res) {
   console.log(req.session);
 });

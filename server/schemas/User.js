@@ -3,18 +3,19 @@ var bcrypt = require('bcryptjs');
 
 var userSchema = new mongoose.Schema({
     name: {
-      first: {type: String, required: true},
+      first: {type: String},
       last: {type: String}
     },
-    email: { type: String, index: true, trim: true, unique: true, required: true},
-    password: { type: String, required: true},
+    email: { type: String, index: true, trim: true, unique: true},
+    password: { type: String},
     admin: {type: Boolean, default: false},
     // img: {}
   facebook: {
     id: String,
     token: String,
     email: String,
-    name: String
+    name: String,
+    pic: String
   }
 });
 
