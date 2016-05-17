@@ -1,12 +1,12 @@
-<div class="card-outer">
+<div class="card-outer" ng-click="toggleModal()">
   <div class="card-almost-outer">
     <div class="card-top">
-      <a class="card-top-link" href="#">
-      <img src="{{idea.user.facebook.pic}}" alt="" />
-      <p class="card-username">
+      <div class="card-top-link">
+        <img src="{{idea.user.facebook.pic}}" alt="Profile pic"/>
+        <p class="card-username">
         {{idea.user.name.first}}  {{idea.user.name.last}}{{idea.user.facebook.name}}
       </p>
-      </a>
+      </div>
     </div>
     <div class="card-mid">
 
@@ -20,6 +20,7 @@
         {{idea.description}}
       </p>
     </div>
+    <button show="show" ng-click='toggleModal()'>Open Modal Dialog</button>
     <hr />
 
     <div class="card-bottom">
@@ -34,7 +35,7 @@
 
     </div>
   </div>
+  <modal-dialog show='modalShown' width='750px' height='60%'>
+    <p>Modal Content Goes here<p>
+  </modal-dialog>
 </div>
-
-
-<!-- enter picture at top, link in all the "a's", title in mid, rating at bottom -->

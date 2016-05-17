@@ -13,5 +13,13 @@ angular.module('mIdea')
         })
       }
 
+      this.logout = function() {
+        return $http({
+          method: 'GET',
+          url: '/logout',
+        }).then(function(response) {
+          return response;
+        });
+      };
 
 })

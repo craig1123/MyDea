@@ -3,6 +3,10 @@ angular.module('mIdea')
 
   $scope.user = user;
 
-
+  $scope.logout = function () {
+    mainServ.logout().then(function(response) {
+      $state.go('logout');
+    });
+  };
 
 })

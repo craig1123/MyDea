@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
 var bodyParser = require('body-parser');
 var passport = require('passport');
-
+var flash = require('connect-flash');
+var cookieParser = require('cookie-parser');
 //Controllers
 var userCtrl = require('./controllers/userCtrl');
 var ideaCtrl = require('./controllers/ideaCtrl');
@@ -29,7 +30,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 
-
+app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.static(__dirname + './../public'));
 app.use(session({
@@ -37,9 +38,10 @@ app.use(session({
   store: new MongoStore({
     mongooseConnection: mongoose.connection
   }) //mongoose sessions to store users.
-}))
-app.use(passport.initialize())
-app.use(passport.session())
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 
 //socket.io
 io.on('connection', function (socket) {
@@ -61,7 +63,7 @@ io.on('connection', function (socket) {
 require('./services/facebook')(passport);
 
 //facebook routes
-app.get('/login/facebook', passport.authenticate('facebook', {scope: 'email'}));
+app.get('/login/facebook', passport.authenticate('facebook', {authType: 'rerequest', scope: ['email' /*, 'user_friends'*/]}));
 app.get('/login/facebook/callback', passport.authenticate('facebook', {
   successRedirect: '/#/logged-in',
   failureRedirect: '/#/login'
@@ -85,16 +87,29 @@ app.delete('/api/ideas/:id', ideaCtrl.delete);
 app.post('/users', userCtrl.register);
 app.get('/users', userCtrl.read);
 app.delete('/users:id', userCtrl.delete);
-app.get('/me', isAuthed, userCtrl.me);
-app.put('/users/:_id', isAuthed, userCtrl.update);
+app.get('/me', isLoggedIn, userCtrl.me);
+app.put('/users/:_id', isLoggedIn, userCtrl.update);
 
 app.post('/login', passport.authenticate('local', {
-  successRedirect: '/me'
+  successRedirect: '/me',
+  failureRedirect : '/login',
+  failureFlash : true // allow flash messages
 }));
 app.get('/logout', function(req, res, next) {
   req.logout();
   return res.status(200).send('logged out');
 });
+// route middleware to ensure user is logged in
+  function isLoggedIn(req, res, next) {
+      if (req.isAuthenticated()) {
+          return next();
+        }
+        else {
+          res.redirect('/login');
+        }
+  }
+
+
 // //authorization
 // app.get('/me', function(req, res) {
 //     res.render('local', { message: req.flash('loginMessage') });
@@ -104,13 +119,6 @@ app.get('/logout', function(req, res, next) {
 //     failureRedirect : '/login', // redirect back to the signup page if there is an error
 //     failureFlash : true // allow flash messages
 // }));
-// // route middleware to ensure user is logged in
-// function isLoggedIn(req, res, next) {
-//     if (req.isAuthenticated())
-//         return next();
-//
-//     res.redirect('/');
-// }
 
 
 //connection to mongoose

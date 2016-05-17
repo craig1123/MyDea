@@ -1,4 +1,29 @@
 <nav-bar></nav-bar>
-<div class="">
-  <h1>you're idea is awesome</h1>
-</div>
+<section>
+  <div class="ideas-page-header">
+  </div>
+  <div class="ideas-page">
+    <div class="ideas-highest-rated">
+      <div class="column-title"><h2>Highest Rated</h2></div>
+      <div class="ideas-page-content" ng-repeat="idea in nonShuffleIdeas">
+        <ideacard class="cards" idea='idea' user='user'></ideacard>
+      </div>
+    </div>
+    <div class="ideas-most-recent">
+      <div class="column-title"><h2>Most Recent</h2></div>
+      <div class="ideas-page-content">
+
+      </div>
+    </div>
+    <div class="ideas-random">
+      <div class="column-title"><h2>Random</h2></div>
+      <div class="ideas-page-content" ng-repeat="idea in shuffleIdeas">
+        <ideacard class="cards" ng-click='toggleModal()' show='show' idea='idea' user='user'></ideacard>
+      </div>
+      <modal-dialog show='modalShown' width='750px' height='60%'>
+        <p>Modal Content Goes here<p>
+      </modal-dialog>
+    </div>
+  </div>
+
+</section>

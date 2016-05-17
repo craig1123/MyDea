@@ -10,41 +10,73 @@ angular.module('mIdea')
     })
   }
 
-  // $scope.getIdeas = function () {
-  //   createServ.getIdeas().then(function (results) {
-  //     console.log(results);
-  //     $scope.ideas = results;
-  //   })
-  // }
-  // $scope.getIdeas();
+  $scope.logout = function () {
+    createServ.logout().then(function(response) {
+      $state.go('logout');
+    });
+  };
 
   $(document).ready(function () {
+    //title
     $('#title').on('mouseenter', function () {
       $('.input-title').show(100);
     }).on('mouseleave', function () {
       $('.input-title').hide();
     })
+    $('#title').focus(function () {
+      $('.input-title').show(100);
+    }).focusout(function () {
+        $('.input-title').hide();
+      })
+
+      //description
     $('#description').on('mouseenter', function () {
       $('.input-description').show(100);
     }).on('mouseleave', function () {
       $('.input-description').hide();
     })
+    $('#description').focus(function () {
+      $('.input-description').show(100);
+    }).focusout(function () {
+      $('.input-description').hide();
+    })
+
+    //what
     $('#what').on('mouseenter', function () {
       $('.input-what').show(100);
     }).on('mouseleave', function () {
       $('.input-what').hide();
     })
-    $('#how').on('mouseenter', function () {
+    $('#what').focus(function () {
+      $('.input-what').show(100);
+    }).focusout(function () {
+      $('.input-what').hide();
+    })
+
+    //how
+    $('#how').on('mo  useenter', function () {
       $('.input-how').show(100);
     }).on('mouseleave', function () {
       $('.input-how').hide();
     })
+    $('#how').focus(function () {
+      $('.input-how').show(100);
+    }).focusout(function () {
+      $('.input-how').hide();
+    })
+
+    //why
     $('#why, .popup-box-two, #why-pop').on('mouseenter', function () {
       $('.input-why').show(100);
     }).on('mouseleave', function () {
       $('.input-why').hide();
     })
-  })
+    $('#why, .popup-box-two, #why-pop').focus(function () {
+      $('.input-why').show(100);
+    }).focusout(function () {
+        $('.input-why').hide();
+      })
 
+    })
 
 })
