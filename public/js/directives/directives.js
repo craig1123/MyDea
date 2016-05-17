@@ -41,10 +41,12 @@ angular.module('mIdea')
       restrict: 'EA',
       templateUrl: "./js/directives/modal.html",
       scope: {
-        show: '='
+        show: '=',
+        idea: "=",
+        user: '='
       },
       replace: true, // Replace with the template modal.html
-      transclude: true, // we want to insert custom content inside the directive
+      transclude: true, // For inserting custom content inside the directive
       link: function(scope, element, attrs) {
         scope.dialogStyle = {};
         if (attrs.width)

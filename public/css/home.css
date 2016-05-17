@@ -126,6 +126,10 @@ li input {
   color: #828587;
   font-size:24px;
 }
+.nav-hello img {
+  height: 53px;
+  width: 53px;
+}
 .nav-hello-name {
   padding: 19px 13px;
   float: right;
@@ -171,13 +175,13 @@ footer {
   margin-top: 10px;
 }
 .copyright {
-  width: 250px;
+  width: 337px;
   font-size: 13px;
   font-family: Georgia, serif;
   display: inline;
   float: left;
   margin-top: 14px;
-  margin-left: 25px;
+  margin-left: 10px;
 }
 .fb-share {
   width: 250px;
@@ -185,8 +189,8 @@ footer {
   font-family: Georgia, serif;
   display: inline;
   float: left;
-  margin-top: 14px;
-  margin-left: 25px;
+  margin-top: 10px;
+  margin-left: 60px;
 }
 
 /*//////////////////////////////////////Home Page////////////////////////////*/
@@ -321,11 +325,19 @@ video {
 }
 .card-outer {
   width: 32%;
-  height: 375px;
+  height: 350px;
   position: relative;
   float: left;
   padding-right: 20px;
   padding-left: 20px;
+}
+.card-outer a{
+  -moz-transition: color 0s ease-in-out, border-bottom-color 0s ease-in-out;
+  -webkit-transition: color 0s ease-in-out, border-bottom-color 0s ease-in-out;
+  -o-transition: color 0s ease-in-out, border-bottom-color 0s ease-in-out;
+  -ms-transition: color 0s ease-in-out, border-bottom-color 0s ease-in-out;
+  transition: color 0s ease-in-out, border-bottom-color 0s ease-in-out;
+  color: white;
 }
 .card-almost-outer {
   height: 100%;
@@ -337,8 +349,10 @@ video {
 }
 .card-top {
   border-radius: 6px 6px 0 0;
-  /*overflow: hidden;*/
+  width: 100%;
+  height: 55px;
   position: relative;
+
 }
 .card-top-link {
   position: absolute;
@@ -346,12 +360,18 @@ video {
   left: 0;
   right: 0;
   bottom: 0;
+  padding: 4px;
 }
-.card-mid {
-  padding: 10px;
-  height: 60%;
+.card-pic {
+  float: left;
+}
+.card-pic img{
+  height: 50px;
+  width: 50px;
+
 }
 .card-username {
+  padding: 40px 0px 0px 60px;
   font-family: monospace;
 }
 .card-title {
@@ -363,6 +383,10 @@ video {
 }
 .card-title a {
   color: #0F2105;
+}
+.card-mid {
+  padding: 10px;
+  height: 50%;
 }
 .card-description {
   color: #fff;
@@ -401,7 +425,7 @@ video {
 
   background-color: #fff;
   box-shadow: 4px 4px 80px #000;
-  
+
 }
 .ng-modal-dialog-content {
   padding:10px;
@@ -529,7 +553,7 @@ video {
 
 /*//////////////////////////////ideas page/////////////////////////////////*/
 .ideas-page-header {
-  background: green;
+  background: teal;
   height: 400px;
   margin-bottom: 20px;
 }
@@ -553,14 +577,36 @@ video {
   font-size: 26px;
   color: #828587;
 }
+
+/*Most recent*/
+.column-recent-title {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-size: 26px;
+  color: #ececec;
+}
 .ideas-most-recent {
   width: 40%;
   padding: 20px;
   margin: 0px 10px 10px;
-  background-color: #fff;
+  background-color: #74b446;
   border: 1px solid #D9D9DE;
   border-radius: 15px;
 }
+.recent-outer-card {
+  width: 100%;
+  padding: 0px 20px;
+}
+.recent-background-card {
+  height: 125px;
+  padding: 0px 20px;
+  background-color: #fff;
+  border: 1px solid #D9D9DE;
+  border-radius: 10px;
+}
+
+/*random*/
 .ideas-random {
   width: 30%;
   padding: 20px;

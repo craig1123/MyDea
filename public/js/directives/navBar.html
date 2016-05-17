@@ -20,7 +20,7 @@
     <nav aria-labelledby="user-navigation" class="nav-right" role="navigation">
       <ul>
         <a class="nav-sign-up" ng-click="logout()">Logout</a>
-        <h3><li class="nav-hello"><img src="{{user.facebook.pic}}" alt="" /></li></h3>
+        <h3><li class="nav-hello"><img src="{{user.facebook.pic || './../../img/profile_default.png'}}" alt="" /></li></h3>
             <h3><li class="nav-hello-name">{{user.name.first}} {{user.name.last}}{{user.facebook.name}}</li></h3>
       </ul>
     </nav>

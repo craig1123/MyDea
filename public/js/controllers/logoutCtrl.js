@@ -1,6 +1,5 @@
 angular.module('mIdea')
-.controller('logoutCtrl', ['$scope', '$state', '$timeout',
-function($scope, $state, $timeout, user) {
+.controller('logoutCtrl', function($scope, $state, $timeout, user) {
 
   $scope.user = user;
 
@@ -8,4 +7,4 @@ function($scope, $state, $timeout, user) {
       $state.go('login');
     }, 2000);
 
-}])
+})

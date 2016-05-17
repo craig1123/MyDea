@@ -2,25 +2,30 @@
   <div class="card-almost-outer">
     <div class="card-top">
       <div class="card-top-link">
-        <img src="{{idea.user.facebook.pic}}" alt="Profile pic"/>
-        <p class="card-username">
-        {{idea.user.name.first}}  {{idea.user.name.last}}{{idea.user.facebook.name}}
-      </p>
+        <div class="card-pic">
+          <a ui-sref="ideaId({id:idea._id})">
+            <img ng-src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic"/>
+          </a>
+        </div>
+
+      </div>
+      <div class="card-username">
+        <p>
+          {{idea.user.name.first}}  {{idea.user.name.last}}{{idea.user.facebook.name}}
+        </p>
       </div>
     </div>
+    <br>
     <div class="card-mid">
-
-      <br>
-      <br>
-      <br>
       <h6 class="card-title">
-        <a href="#">{{idea.title}}</a>
+        <a ui-sref="ideaId({id:idea._id})">{{idea.title}}</a>
       </h6>
+      <br>
       <p class="card-description">
-        {{idea.description}}
+        <a ui-sref="ideaId({id:idea._id})">{{idea.description}}</a>
       </p>
     </div>
-    <button show="show" ng-click='toggleModal()'>Open Modal Dialog</button>
+
     <hr />
 
     <div class="card-bottom">
@@ -30,12 +35,7 @@
         <span class="label" ng-class="{'label-warning': fraction<3, 'label-info': fraction>=3 && fraction<7, 'label-success': fraction>=7}" ng-show="overStar">
           {{fraction}}/10
         </span>
-
       </div>
-
     </div>
   </div>
-  <modal-dialog show='modalShown' width='750px' height='60%'>
-    <p>Modal Content Goes here<p>
-  </modal-dialog>
 </div>

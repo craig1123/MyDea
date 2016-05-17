@@ -9,7 +9,8 @@ var ideaSchema = new Schema({
   how: {type: String, required: true},
   why: {type: String, required: true},
   rating: [{type: Number}],
-  user: {type: Schema.Types.ObjectId, ref: 'User'}
+  user: {type: Schema.Types.ObjectId, ref: 'User'},
+  date: {type: Date, default: new Date()}
 })
 
 module.exports = mongoose.model('Idea', ideaSchema)

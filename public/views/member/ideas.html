@@ -5,24 +5,33 @@
   <div class="ideas-page">
     <div class="ideas-highest-rated">
       <div class="column-title"><h2>Highest Rated</h2></div>
-      <div class="ideas-page-content" ng-repeat="idea in nonShuffleIdeas">
+      <div class="ideas-page-content" ng-repeat="idea in nonShuffleIdeas | limitTo: 10">
         <ideacard class="cards" idea='idea' user='user'></ideacard>
       </div>
     </div>
     <div class="ideas-most-recent">
-      <div class="column-title"><h2>Most Recent</h2></div>
+      <div class="column-recent-title"><h2>Most Recent</h2></div>
       <div class="ideas-page-content">
+        <div class="recent-outer-card">
+          <div class="recent-background-card">
+            <div class="recent-card-left">
 
+            </div>
+            <div class="recent-card-mid">
+
+            </div>
+            <div class="recent-card-right">
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="ideas-random">
       <div class="column-title"><h2>Random</h2></div>
-      <div class="ideas-page-content" ng-repeat="idea in shuffleIdeas">
-        <ideacard class="cards" ng-click='toggleModal()' show='show' idea='idea' user='user'></ideacard>
+      <div class="ideas-page-content" ng-repeat="idea in shuffleIdeas | limitTo: 10">
+        <ideacard class="cards" idea='idea' user='user'></ideacard>
       </div>
-      <modal-dialog show='modalShown' width='750px' height='60%'>
-        <p>Modal Content Goes here<p>
-      </modal-dialog>
     </div>
   </div>
 

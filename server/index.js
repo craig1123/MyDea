@@ -79,7 +79,7 @@ app.get('/me', function (req, res) {
 //ideas
 app.post('/api/ideas', ideaCtrl.create);
 app.get('/api/ideas', ideaCtrl.read);
-app.get('/api/ideas/:id', ideaCtrl.readById);
+// app.get('/api/ideas/:id', ideaCtrl.readById);
 app.put('/api/ideas/:id', ideaCtrl.update);
 app.delete('/api/ideas/:id', ideaCtrl.delete);
 

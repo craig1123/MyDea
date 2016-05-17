@@ -13,11 +13,11 @@ module.exports = {
       res.send(i);
     })
   },
-  readById: function (req, res) {
-    Idea.findById({_id: req.params.id}, function (err, i) {
-      res.send(i);
-    })
-  },
+  // readById: function (req, res) {
+  //   Idea.findById({_id: req.params.id}, function (err, i) {
+  //     res.send(i);
+  //   })
+  // },
   update: function (req, res) {
     if (!req.params.id) {
       return res.status(400).send('id query needed');
