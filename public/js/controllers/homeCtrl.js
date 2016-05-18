@@ -37,6 +37,9 @@ angular.module('mIdea')
                     total += parseInt(array[i].rating[j], 10);
                 }
                 var avg = total / number;
+                if (!avg) {
+                  avg = 0;
+                }
                 array[i].avg = avg;
             }
             array = bubbleSort(array);

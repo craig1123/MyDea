@@ -1,4 +1,4 @@
-var Idea = require('../schemas/Idea.js');
+var Idea = require('../schemas/Comment.js');
 
 module.exports = {
   create: function (req, res) {

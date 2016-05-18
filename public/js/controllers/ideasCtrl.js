@@ -3,19 +3,6 @@ angular.module('mIdea')
 
   $scope.user = user;
 
-  $scope.rate = 0;
-  $scope.max = 10;
-
-  $scope.hoveringOver = function(value) {
-    $scope.overStar = value;
-    $scope.fraction = 10 * (value / $scope.max);
-  };
-
-  $scope.ratingStates = [
-  {stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty'},
-  {stateOff: 'glyphicon-off'}
-  ];
-
   $scope.logout = function () {
     ideaServ.logout().then(function(response) {
       $state.go('logout');

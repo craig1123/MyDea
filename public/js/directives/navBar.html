@@ -13,14 +13,9 @@
         <a ui-sref="collaborate"><li class="primary-menu-link">Collaborate</li></a>
       </ul>
         <form class="header-search" role="search">
-          <i ng-click="getIdeas()" class="fa fa-search" aria-hidden="true"></i>
-          <input placeholder="Search Ideas" ng-model="searchIdeas">
+          <i  class="fa fa-search" aria-hidden="true"></i>
+          <input ng-change="queryIdeas(searchIdeas)" placeholder="Search Ideas" ng-model="searchIdeas">
         </form>
-        <div ng-class="{'searching': ideaSearch}" ng-repeat="idea in ideas | filter:searchIdeas">
-          <div class="">
-
-          </div>
-        </div>
     </nav>
     <nav aria-labelledby="user-navigation" class="nav-right" role="navigation">
       <ul>
@@ -30,7 +25,9 @@
       </ul>
     </nav>
   </div>
-  <div class="nav-search-space">
-    
-  </div>
+    <div ng-show="ideas.length" class="searching" ng-model="ideaPlace">
+      <div class="search-place" ng-repeat="idea in ideas">
+        <ideacard idea="idea"></ideacard>
+      </div>
+    </div>
 </header>

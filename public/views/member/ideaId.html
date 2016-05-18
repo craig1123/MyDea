@@ -1,13 +1,56 @@
 <nav-bar></nav-bar>
-<h1>{{idea.title}}</h1>
 
-<p>
-  {{idea.description}}
-</p>
-hello
+<section class="idea-own-outside" idea='idea' user='user'>
+    <div class="idea-own">
+      <div class="idea-own-left">
+          <div class="own-pic">
+              <img ng-src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic" />
+              <div class="idea-own-column">
+                  <h1>{{idea.title}}</h1>
+              </div>
+              <div class="own-username">
+                {{idea.user.name.first}}  {{idea.user.name.last}}{{idea.user.facebook.name}}
+                <br><br><br>
+                <div>
+                  Rating: {{idea.avg | number:1}}/10.0
+                </div>
+              </div><br>
+          </div>
+        </div>
 
-<h4>Rate the mIdea  -  <b>{{rate}}/10</b></h4>
-<uib-rating class="card-rating" ng-model="rate" ng-click="updateIdea(idea._id, rate)" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
-<span class="label" ng-class="{'label-warning': fraction<3, 'label-info': fraction>=3 && fraction<7, 'label-success': fraction>=7}" ng-show="overStar">
-  {{fraction}}/10
-</span>
+
+        <div class="idea-own-content">
+            <div class="idea-own-description">
+                <h2>{{idea.description}}</h2>
+                <br>
+                <div class="idea-own-important">
+                    <p>
+                      <u>Purpose</u>:   {{idea.why}}
+                    </p><hr>
+                    <p>
+                      <u>Process</u>: {{idea.how}}
+                    </p><hr>
+                    <p>
+                      <u>What is it</u>: {{idea.what}}
+                    </p>
+                </div>
+            </div>
+            <br>
+              <hr>
+            <div class="idea-own-rating">
+                <h4>Rate the mIdea  -  <b>{{rate}}/10</b></h4>
+                <uib-rating class="card-rating" ng-model="rate" ng-click="updateIdea(idea._id, rate)" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+                <span class="label" ng-class="{'label-warning': fraction<3, 'label-info': fraction>=3 && fraction<7, 'label-success': fraction>=7}" ng-show="overStar">
+                  {{fraction}}/10
+                </span>
+                <br>
+            </div>
+            <div class="own-posted">
+                Posted: {{idea.date | date: "short"}}
+            </div>
+        </div>
+    </div>
+    <div class="idea-own-comment">
+      
+    </div>
+</section>

@@ -46,6 +46,11 @@ angular.module('mIdea')
        return response.data
      });
  };
+ this.getIdeasQuery = function (search) {
+   return $http.get('/api/ideas/query/?search=' + search).then(function (res) {
+     return res.data
+   })
+ }
  this.updateIdea = function (id, rating) {
    return $http({
      method: "PUT",

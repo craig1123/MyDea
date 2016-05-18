@@ -9,6 +9,7 @@ var cookieParser = require('cookie-parser');
 //Controllers
 var userCtrl = require('./controllers/userCtrl');
 var ideaCtrl = require('./controllers/ideaCtrl');
+var ideaCtrl = require('./controllers/commentCtrl');
 
 //Services
 var local = require('./services/local');
@@ -79,7 +80,14 @@ app.get('/me', function (req, res) {
 //ideas
 app.post('/api/ideas', ideaCtrl.create);
 app.get('/api/ideas', ideaCtrl.read);
-// app.get('/api/ideas/:id', ideaCtrl.readById);
+app.get('/api/ideas/query/', ideaCtrl.readByQuery);
+app.put('/api/ideas/:id', ideaCtrl.update);
+app.delete('/api/ideas/:id', ideaCtrl.delete);
+
+//Comments
+app.post('/api/ideas', ideaCtrl.create);
+app.get('/api/ideas', ideaCtrl.read);
+app.get('/api/ideas/query/', ideaCtrl.readByQuery);
 app.put('/api/ideas/:id', ideaCtrl.update);
 app.delete('/api/ideas/:id', ideaCtrl.delete);
 

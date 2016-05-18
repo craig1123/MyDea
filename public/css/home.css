@@ -136,6 +136,26 @@ li input {
   color: #828587;
   font-size:24px;
 }
+.searching {
+  height: 380px;
+  width: 95%;
+  margin: 25px auto 0px auto;
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  display: flex;
+}
+.searching.ng-hide {
+  opacity: 0;
+}
+.search-place {
+  width: 100%;
+  margin: auto;
+}
+.search-place .card-outer {
+  vertical-align: top;
+  width: 300px;
+  margin-right: 20px
+}
 
 /*-------------Every View-----------------------*/
 .view {
@@ -528,6 +548,68 @@ video {
   width: 100%;
   margin-bottom: 20px;
 }
+
+
+/*----------------------------------idea route-----------------------------*/
+.idea-own-outside {
+  width: 80%;
+  margin: auto;
+  padding: 70px 20px;
+}
+.idea-own {
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #D9D9DE;
+  border-radius: 15px;
+}
+.idea-own-column {
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  font-size: 26px;
+  color: #74b446;
+  margin: auto;
+}
+.idea-own-column h1{
+  margin: auto;
+}
+.own-username{
+  margin-top: -50px;
+}
+.own-pic img{
+  height: 75px;
+  width: 75px;
+}
+.idea-own-content {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.idea-own-description {
+
+}
+.idea-own-description h2{
+  margin-top: -20px;
+  text-align: center;
+  color: #0C44D3
+}
+.idea-own-important {
+  padding: 20px;
+  width: 88%;
+  margin: auto;
+  border: 1px solid #000;
+  border-radius: 15px;
+  letter-spacing: .5px;
+  font-family: serif;
+  font-size: 19px;
+}
+.idea-own-rating {
+  float: left;
+}
+.own-posted {
+  float: right;
+}
+
+
 
 /*----------------------------------------idea cards-------------------------*/
 .home-content {
