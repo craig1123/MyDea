@@ -3,6 +3,19 @@ angular.module('mIdea')
 
   $scope.user = user;
 
+  $scope.rate = 0;
+  $scope.max = 10;
+
+  $scope.hoveringOver = function(value) {
+    $scope.overStar = value;
+    $scope.fraction = 10 * (value / $scope.max);
+  };
+
+  $scope.ratingStates = [
+  {stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty'},
+  {stateOff: 'glyphicon-off'}
+  ];
+
   $scope.logout = function () {
     ideaServ.logout().then(function(response) {
       $state.go('logout');
@@ -44,7 +57,11 @@ angular.module('mIdea')
               total += parseInt(array[i].rating[j], 10);
           }
           var avg = total / number;
+          if (!avg) {
+            avg = 0;
+          }
           array[i].avg = avg;
+
       }
       array = bubbleSort(array);
       $scope.nonShuffleIdeas = array;
@@ -62,9 +79,9 @@ angular.module('mIdea')
       return theArray;
   }
   //scope for the popup modals
-    $scope.modalShown = false;
-    $scope.toggleModal = function() {
-      $scope.modalShown = !$scope.modalShown;
-    };
+    // $scope.modalShown = false;
+    // $scope.toggleModal = function() {
+    //   $scope.modalShown = !$scope.modalShown;
+    // };
 
 })

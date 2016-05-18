@@ -36,30 +36,30 @@ angular.module('mIdea')
       }
     }
   })
-  .directive("modalDialog", function () {
-    return {
-      restrict: 'EA',
-      templateUrl: "./js/directives/modal.html",
-      scope: {
-        show: '=',
-        idea: "=",
-        user: '='
-      },
-      replace: true, // Replace with the template modal.html
-      transclude: true, // For inserting custom content inside the directive
-      link: function(scope, element, attrs) {
-        scope.dialogStyle = {};
-        if (attrs.width)
-          scope.dialogStyle.width = attrs.width;
-        if (attrs.height)
-          scope.dialogStyle.height = attrs.height;
-        scope.hideModal = function() {
-          scope.show = false;
-        };
-      },
-
-    };
-  })
+  // .directive("modalDialog", function () {
+  //   return {
+  //     restrict: 'EA',
+  //     templateUrl: "./js/directives/modal.html",
+  //     scope: {
+  //       show: '=',
+  //       idea: "=",
+  //       user: '='
+  //     },
+  //     replace: true, // Replace with the template modal.html
+  //     transclude: true, // For inserting custom content inside the directive
+  //     link: function(scope, element, attrs) {
+  //       scope.dialogStyle = {};
+  //       if (attrs.width)
+  //         scope.dialogStyle.width = attrs.width;
+  //       if (attrs.height)
+  //         scope.dialogStyle.height = attrs.height;
+  //       scope.hideModal = function() {
+  //         scope.show = false;
+  //       };
+  //     },
+  //
+  //   };
+  // })
   .directive('myDraggable', ['$document', function($document) {
   return {
     link: function(scope, element, attr) {

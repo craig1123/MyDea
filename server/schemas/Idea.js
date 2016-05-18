@@ -10,7 +10,7 @@ var ideaSchema = new Schema({
   why: {type: String, required: true},
   rating: [{type: Number}],
   user: {type: Schema.Types.ObjectId, ref: 'User'},
-  date: {type: Date, default: new Date()}
+  date: {type: Date, default: Date.now}
 })
 
 module.exports = mongoose.model('Idea', ideaSchema)
