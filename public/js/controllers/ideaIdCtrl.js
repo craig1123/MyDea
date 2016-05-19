@@ -16,6 +16,23 @@ angular.module('mIdea')
   {stateOff: 'glyphicon-off'}
   ];
 
+
+  $scope.addComment = function(comment) {
+     if($scope.txtcomment !=''){
+       commentServ.postComment(comment).then(function(res){
+         $scope.txtcomment = "";
+      })
+     }
+ }
+
+ $scope.getComments = function () {
+   commentServ.getComments().then(function(res) {
+     console.log(res);
+     $scope.comments = res;
+   })
+ }
+
+
   $scope.updateIdea = function(id, rating) {
       commentServ.updateIdea(id, rating).then(function(res) {
       })

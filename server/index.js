@@ -9,7 +9,7 @@ var cookieParser = require('cookie-parser');
 //Controllers
 var userCtrl = require('./controllers/userCtrl');
 var ideaCtrl = require('./controllers/ideaCtrl');
-var ideaCtrl = require('./controllers/commentCtrl');
+var commentCtrl = require('./controllers/commentCtrl');
 
 //Services
 var local = require('./services/local');
@@ -85,16 +85,15 @@ app.put('/api/ideas/:id', ideaCtrl.update);
 app.delete('/api/ideas/:id', ideaCtrl.delete);
 
 //Comments
-app.post('/api/ideas', ideaCtrl.create);
-app.get('/api/ideas', ideaCtrl.read);
-app.get('/api/ideas/query/', ideaCtrl.readByQuery);
-app.put('/api/ideas/:id', ideaCtrl.update);
-app.delete('/api/ideas/:id', ideaCtrl.delete);
+app.post('/api/comment', commentCtrl.create);
+app.get('/api/comments', commentCtrl.read);
+app.put('/api/comments/:id', commentCtrl.update);
+app.delete('/api/comments/:id', commentCtrl.delete);
 
 //local-Auth
 app.post('/users', userCtrl.register);
 app.get('/users', userCtrl.read);
-app.delete('/users:id', userCtrl.delete);
+app.delete('/users/:id', userCtrl.delete);
 app.get('/me', isLoggedIn, userCtrl.me);
 app.put('/users/:_id', isLoggedIn, userCtrl.update);
 

@@ -1,5 +1,5 @@
 angular.module('mIdea')
-.service('homeServ', function ($http) {
+.service('commentServ', function ($http) {
 
       this.getIdeas = function () {
         return $http.get('/api/ideas').then(function (response) {
@@ -15,5 +15,19 @@ angular.module('mIdea')
           return res.data
         })
       };
-      
+      this.getComments = function () {
+        return $http({
+          method: "GET",
+          url: '/api/comments'
+        }).then(function (res) {
+          console.log(res);
+          return res.data;
+        })
+      };
+      this.postComment = function (comment) {
+        return $http.post('/api/comment', comment)
+        .then(function (response) {
+          return response.data
+        })
+      }
 })

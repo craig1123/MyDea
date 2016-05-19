@@ -10,6 +10,7 @@ var ideaSchema = new Schema({
   why: {type: String, required: true},
   rating: [{type: Number}],
   user: {type: Schema.Types.ObjectId, ref: 'User'},
+  comments: {type: Schema.Types.ObjectId, ref: 'Comment'},
   date: {type: Date, default: Date.now}
 })
 

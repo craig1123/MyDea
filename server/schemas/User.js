@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
-var userSchema = new mongoose.Schema({
+var Schema = mongoose.Schema;
+
+var userSchema = new Schema({
     name: {
       first: {type: String},
       last: {type: String}
@@ -9,6 +11,7 @@ var userSchema = new mongoose.Schema({
     email: { type: String, index: true, trim: true, unique: true},
     password: { type: String},
     admin: {type: Boolean, default: false},
+    ideas: {type: Schema.Types.ObjectId, ref: 'Idea'},
     // img: {}
   facebook: {
     id: String,

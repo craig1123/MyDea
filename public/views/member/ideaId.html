@@ -51,6 +51,21 @@
         </div>
     </div>
     <div class="idea-own-comment">
-      
+      <div id='dv1'>
+            <form>
+                Post your Comment
+                <form>
+                    <textarea ng-model="comment" placeholder="Your Comment" style='width:550px'></textarea>
+                    <button ng-click='addComment(comment);' style='margin-top:10px;'>Post Comment</button>
+
+                    <h4>Comments</h4>
+                    <ul>
+                        <li ng-repeat="comnt in comments">
+                          {{ comnt }}
+                        </li>
+                    </ul>
+                </form>
+        </div>
     </div>
+    {{idea}}
 </section>

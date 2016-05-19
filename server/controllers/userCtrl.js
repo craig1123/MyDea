@@ -33,7 +33,7 @@ module.exports = {
     if(!req.params.id){
         return res.status(400).send('id query needed');
     }
-    Idea.findByIdAndRemove({_id: req.params.id}, function (err, i) {
+    User.findByIdAndRemove({_id: req.params.id}, function (err, i) {
       res.send(i);
     });
   }

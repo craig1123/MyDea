@@ -56,22 +56,38 @@ var userResolve = {
       templateUrl: "./../views/member/loggedIn.html",
       controller: 'mainCtrl',
       resolve: userResolve
-    }).state('ideaId', {
-        url: '/ideas/:id',
-        controller: 'ideaIdCtrl',
-        templateUrl: './../views/member/ideaId.html',
-        resolve: {
-          idea: function (ideaServ, $stateParams) {
-            return ideaServ.getIdea($stateParams.id);
-          },
-          user: function(mainServ, $state) {
-            return mainServ.getUser().then(function(response) {
-              return response.data;
-            }).catch(function(err) {
-              $state.go('login');
-            });
-          }
+  }).state('settings', {
+      url: "/settings/:id",
+      templateUrl: "./../views/member/settings.html",
+      controller: 'settingsCtrl',
+      resolve: {
+        userSettings: function (settingsServ, $stateParams) {
+          return settingsServ.getUser($stateParams.id);
+        },
+        user: function(mainServ, $state) {
+          return mainServ.getUser().then(function(response) {
+            return response.data;
+          }).catch(function(err) {
+            $state.go('login');
+          });
         }
-      });
+      }
+    }).state('ideaId', {
+      url: '/ideas/:id',
+      controller: 'ideaIdCtrl',
+      templateUrl: './../views/member/ideaId.html',
+      resolve: {
+        idea: function (ideaServ, $stateParams) {
+          return ideaServ.getIdea($stateParams.id);
+        },
+        user: function(mainServ, $state) {
+          return mainServ.getUser().then(function(response) {
+            return response.data;
+          }).catch(function(err) {
+            $state.go('login');
+          });
+        }
+      }
+    });
 
 });
