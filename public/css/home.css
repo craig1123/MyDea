@@ -335,11 +335,25 @@ video {
 
 
 /*/////////////////////////////////create ideas/////////////////////*/
+
 .create-screen {
   height: 1030px;
   width: 100%;
   display: flex;
   justify-content: space-around;
+}
+.view div#silkscreen3 {
+	background: url(/../img/silkscreen.svg), url(/../img/green-leaf.jpg);
+	padding-bottom: 300px;
+	background-size: 3px 4px, 100%;
+	background-repeat: repeat, no-repeat;
+	-webkit-filter: grayscale(1);
+	filter: grayscale(1);
+	transition: 1.3s;
+}
+.view div#silkscreen3:hover {
+	-webkit-filter: grayscale(0);
+	filter: none;
 }
 .create-two {
   width: 100%;
@@ -457,13 +471,34 @@ video {
   margin-bottom: 20px;
 }
 div#silkscreen {
-background: url(./../img/green-neon.jpg) no-repeat;
-background-size:4px 4px, 100%;
--webkit-filter: grayscale(1);
-transition: 1.3s;
+	background: url(/../img/silkscreen.svg), url(/../img/grass-bulb.jpg);
+	padding-bottom: 300px;
+	background-size: 4px 4px, 100%;
+	background-repeat: repeat, no-repeat;
+	-webkit-filter: grayscale(1);
+	filter: grayscale(1);
+	transition: 1.3s;
 }
 div#silkscreen:hover {
-filter: none;
+	-webkit-filter: grayscale(0);
+	filter: none;
+}
+div#silkscreen2 {
+	background: url(/../img/silkscreen.svg), url(/../img/grass-bulb-bottom.jpg);
+	padding-bottom: 300px;
+	background-size:4px 4px, 100%;
+	background-repeat: repeat, no-repeat;
+	-webkit-filter: grayscale(1);
+	filter: grayscale(1);
+	transition: 1.3s;
+}
+div#silkscreen2:hover {
+	-webkit-filter: grayscale(0);
+	filter: none;
+}
+.ideas-page-footer {
+  height: 400px;
+  margin-top: 20px;
 }
 .ideas-page {
   display: flex;
@@ -752,7 +787,6 @@ filter: none;
   cursor: pointer;
 }
 /*//////////////////////////////collaborate///////////////////////////////*/
-
 
 
 /*/////////////////////////////sign-up and login///////////////////////*/

@@ -1,6 +1,7 @@
 angular.module('mIdea')
-.service('commentServ', function ($http) {
+.service('ideaIdServ', function ($http) {
 
+//ideas
       this.getIdeas = function () {
         return $http.get('/api/ideas').then(function (response) {
             return response.data
@@ -15,6 +16,8 @@ angular.module('mIdea')
           return res.data
         })
       };
+
+//comments
       this.getComments = function () {
         return $http({
           method: "GET",
@@ -24,9 +27,12 @@ angular.module('mIdea')
           return res.data;
         })
       };
-      this.postComment = function (comment) {
-        return $http.post('/api/comment', comment)
-        .then(function (response) {
+      this.postComment = function (idea) {
+        return $http({
+          method: "PUT",
+          url: "/api/ideas/" + idea._id,
+          data: idea
+        }).then(function (response) {
           return response.data
         })
       }

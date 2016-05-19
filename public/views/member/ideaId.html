@@ -55,17 +55,19 @@
             <form>
                 Post your Comment
                 <form>
-                    <textarea ng-model="comment" placeholder="Your Comment" style='width:550px'></textarea>
-                    <button ng-click='addComment(comment);' style='margin-top:10px;'>Post Comment</button>
-
+                    <textarea ng-model="newComment.content" placeholder="Your Comment" style='width:550px'></textarea>
+                    <button ng-click='addComment(newComment);' style='margin-top:10px;'>Post Comment</button>
                     <h4>Comments</h4>
-                    <ul>
-                        <li ng-repeat="comnt in comments">
-                          {{ comnt }}
-                        </li>
+                      <div class="idea-own">
+                    <ul ng-repeat="comnt in idea.comments">
+                        <li>
+                          {{comnt.content}}
+                          {{comnt.user.facebook.name}}
+                          {{comnt.date | date: "short"}}
+                        </li><br><br><hr>
                     </ul>
+                  </div>
                 </form>
         </div>
     </div>
-    {{idea}}
 </section>

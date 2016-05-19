@@ -9,7 +9,6 @@ var cookieParser = require('cookie-parser');
 //Controllers
 var userCtrl = require('./controllers/userCtrl');
 var ideaCtrl = require('./controllers/ideaCtrl');
-var commentCtrl = require('./controllers/commentCtrl');
 
 //Services
 var local = require('./services/local');
@@ -84,11 +83,6 @@ app.get('/api/ideas/query/', ideaCtrl.readByQuery);
 app.put('/api/ideas/:id', ideaCtrl.update);
 app.delete('/api/ideas/:id', ideaCtrl.delete);
 
-//Comments
-app.post('/api/comment', commentCtrl.create);
-app.get('/api/comments', commentCtrl.read);
-app.put('/api/comments/:id', commentCtrl.update);
-app.delete('/api/comments/:id', commentCtrl.delete);
 
 //local-Auth
 app.post('/users', userCtrl.register);

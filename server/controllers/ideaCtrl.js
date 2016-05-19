@@ -12,10 +12,9 @@ module.exports = {
     Idea.find(req.query).populate({
       path:'user',
       select:"name facebook",
-      populate: {
-        path: 'comments',
-        select:'content user'
-      }
+    }).populate({
+      path:'comments.user',
+      select: 'name facebook'
     }).exec(function (err, i) {
       res.send(i);
     })
@@ -30,9 +29,17 @@ module.exports = {
     if (!req.params.id) {
       return res.status(400).send('id query needed');
     }
-    Idea.findByIdAndUpdate(req.params.id, {$push:{"rating":req.body.rating}}, function (err, i) {
-        res.send(i);
-    });
+    if (!req.body.title) {
+      console.log("just updating rating");
+      Idea.findByIdAndUpdate(req.params.id, {$push:{"rating":req.body.rating}}, function (err, i) {
+          res.send(i);
+      });
+    } else {
+      console.log("Updating whole idea");
+        Idea.findByIdAndUpdate(req.params.id, req.body, function (err, i) {
+          res.send(i)
+        })
+    }
   },
   delete: function (req, res) {
     if(!req.params.id){
