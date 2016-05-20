@@ -1,5 +1,5 @@
 angular.module('mIdea')
-.controller('ideaIdCtrl', function ($scope, $state, user, idea, commentServ) {
+.controller('ideaIdCtrl', function ($scope, $state, user, idea, ideaIdServ) {
   $scope.user = user;
   $scope.idea = idea[0];
   console.log(idea);
@@ -30,53 +30,16 @@ angular.module('mIdea')
     newComment.user = $scope.user._id;
      $scope.idea.comments.push(newComment)
      $scope.comments = $scope.idea.comments;
-       commentServ.postComment($scope.idea).then(function(){
+       ideaIdServ.postComment($scope.idea).then(function(){
          newComment.user = $scope.user;
          newComment.date = new Date();
          $scope.newComment = {};
       })
      }
 
-//  $scope.getComments = function () {
-//    commentServ.getComments().then(function(res) {
-//      console.log(res);
-//      $scope.comments = res;
-//    })
-//  }
-// $scope.getComments();
-
   $scope.updateIdea = function(id, rating) {
-      commentServ.updateIdea(id, rating).then(function(res) {
+      ideaIdServ.updateIdea(id, rating).then(function(res) {
       })
   }
-
-  // $scope.getIdeas = function() {
-  //     commentServ.getIdeas().then(function(results) {
-  //         $scope.mideas = results;
-  //         var ideas = [];
-  //         for (var i = 0; i < results.length; i++) {
-  //             ideas.push(results[i]);
-  //         }
-  //         $scope.highestRating($scope.mideas);
-  //     })
-  // }
-  // $scope.getIdeas();
-  // $scope.highestRating = function(array) {
-  //     for (var i = 0; i < array.length; i++) {
-  //         var total = 0;
-  //         var number = array[i].rating.length;
-  //         for (var j = 0; j < array[i].rating.length; j++) {
-  //             total += parseInt(array[i].rating[j], 10);
-  //         }
-  //         var avg = total / number;
-  //         if (!avg) {
-  //           avg = 0;
-  //         }
-  //         array[i].avg = avg;
-  //       }
-  //     array = bubbleSort(array);
-  //     $scope.mideas = array;
-  // }
-
 
 })

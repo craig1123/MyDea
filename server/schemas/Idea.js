@@ -15,7 +15,9 @@ var ideaSchema = new Schema({
     user: {type:Schema.Types.ObjectId, ref: "User"},
     date: {type: Date, default: new Date()}
   }],
-  date: {type: Date, default: Date.now}
+  date: {type: Date, default: Date.now},
+  viewable: {type: Boolean, default: true},
+  trash: {type: Boolean, default: false}
 })
 
 module.exports = mongoose.model('Idea', ideaSchema)

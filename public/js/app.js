@@ -43,13 +43,9 @@ var userResolve = {
       templateUrl: './../views/member/ideas.html',
       resolve: userResolve
   }).state('trash', {
-      url: '/ideas/trash',
-      templateUrl: './../views/member/trashIdeas.html',
-      resolve: userResolve
-  }).state('collaborate', {
-      url: '/collaborate',
-      controller: 'collaborateCtrl',
-      templateUrl: './../views/member/collaborate.html',
+      url: '/trash',
+      controller: 'trashCtrl',
+      templateUrl: './../views/member/trash.html',
       resolve: userResolve
   }).state('profile', {
       url: "/logged-in",

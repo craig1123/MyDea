@@ -54,7 +54,7 @@ angular.module('mIdea')
     })
 
     //how
-    $('#how').on('mo  useenter', function () {
+    $('#how').on('mouseenter', function () {
       $('.input-how').show(100);
     }).on('mouseleave', function () {
       $('.input-how').hide();

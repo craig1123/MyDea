@@ -46,28 +46,37 @@
                 <br>
             </div>
             <div class="own-posted">
-                Posted: {{idea.date | date: "short"}}
+                Posted: {{idea.date | date: "MMM d, yyyy  h:m a"}}
             </div>
         </div>
     </div>
     <div class="idea-own-comment">
-      <div id='dv1'>
-            <form>
-                Post your Comment
-                <form>
-                    <textarea ng-model="newComment.content" placeholder="Your Comment" style='width:550px'></textarea>
-                    <button ng-click='addComment(newComment);' style='margin-top:10px;'>Post Comment</button>
-                    <h4>Comments</h4>
-                      <div class="idea-own">
-                    <ul ng-repeat="comnt in idea.comments">
-                        <li>
-                          {{comnt.content}}
-                          {{comnt.user.facebook.name}}
-                          {{comnt.date | date: "short"}}
-                        </li><br><br><hr>
-                    </ul>
-                  </div>
-                </form>
-        </div>
-    </div>
+        <form>
+            <h4 class="comment-top">Comments</h4>
+            <div>
+                <ul class="comment-box" ng-repeat="comnt in idea.comments">
+                  <li>
+                    <img src="{{comnt.user.facebook.pic || './../../img/profile_default.png'}}" alt="" />
+                    <div class="comment-content">
+                      {{comnt.content}}
+                    </div>
+                    <div>
+                      {{comnt.user.facebook.name}}{{comnt.user.name.first}} {{comnt.user.name.last}}
+                    </div>
+
+                      <div class="own-date">
+                        {{comnt.date | date: "MMM d, yyyy  h:m a"}}
+                      </div>
+                  </li><br><br>
+              </ul>
+              <hr>
+          </div>
+          <div class="comment-bottom">
+            <textarea ng-model="newComment.content" placeholder="Give Feedback" class='comment-here'></textarea>
+          </div>
+            <div class="comment-bot-btn">
+              <button type="submit" ng-click='addComment(newComment);' class='comment-btn'>Give</button>
+            </div>
+        </form>
+      </div>
 </section>

@@ -2,7 +2,7 @@ angular.module('mIdea')
 .service('homeServ', function ($http) {
 
       this.getIdeas = function () {
-        return $http.get('/api/ideas').then(function (response) {
+        return $http.get('/api/ideas?viewable=true').then(function (response) {
             return response.data
           });
       };
