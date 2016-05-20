@@ -2,7 +2,6 @@ angular.module('mIdea')
 .controller('ideaIdCtrl', function ($scope, $state, user, idea, ideaIdServ) {
   $scope.user = user;
   $scope.idea = idea[0];
-  console.log(idea);
 
   $scope.rate = 0;
   $scope.max = 10;

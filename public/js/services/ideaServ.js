@@ -15,7 +15,7 @@ angular.module('mIdea')
     });
   }
   this.getIdeas = function () {
-    return $http.get('/api/ideas?viewable=true').then(function (response) {
+    return $http.get('/api/ideas?viewable=true?trash=false').then(function (response) {
         return response.data
       });
   };

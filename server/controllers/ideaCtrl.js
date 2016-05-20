@@ -29,16 +29,43 @@ module.exports = {
     if (!req.params.id) {
       return res.status(400).send('id query needed');
     }
-    if (!req.body.title) {
+    if (req.body.rating) {
       console.log("just updating rating");
       Idea.findByIdAndUpdate(req.params.id, {$push:{"rating":req.body.rating}}, function (err, i) {
-          res.send(i);
+          return res.send(i);
       });
-    } else {
+    }
+    if (req.body.viewable === true || req.body.viewable === false) {
+      console.log("makin it private");
+      Idea.findByIdAndUpdate(req.params.id,
+        {$set:{"viewable": req.body.viewable}},
+        function (err, i) {
+          return res.send(i);
+      });
+    }
+    else {
       console.log("Updating whole idea");
         Idea.findByIdAndUpdate(req.params.id, req.body, function (err, i) {
-          res.send(i)
+          return res.send(i);
         })
+    }
+  },
+  updateTrash: function (req, res) {
+    if (!req.params.id) {
+      return res.status(400).send('id query needed');
+    }
+    if (req.body.trash === true || req.body.trash === false) {
+      req.body.user = undefined;
+      console.log("recycling trash");
+      // Idea.user = undefined; //http://stackoverflow.com/questions/4486926/delete-a-key-from-a-mongodb-document-using-mongoose
+      // Idea.save(function (err, i) {
+      //   return err ? res.status(500).send(err) : res.send(i)
+      // })
+      Idea.findByIdAndUpdate(req.params.id,
+        {$set:{'trash': req.body.trash, 'user': undefined}},
+        function (err, i) {
+          return res.send(i);
+      })
     }
   },
   delete: function (req, res) {

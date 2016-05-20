@@ -2,7 +2,7 @@ angular.module('mIdea')
 .service('homeServ', function ($http) {
 
       this.getIdeas = function () {
-        return $http.get('/api/ideas?viewable=true').then(function (response) {
+        return $http.get('/api/ideas?viewable=true?trash=false').then(function (response) {
             return response.data
           });
       };
@@ -14,11 +14,6 @@ angular.module('mIdea')
         }).then(function (res) {
           return res.data
         })
-      };
-      this.delete = function (id) {
-        return $http.delete('/api/ideas/' + id).then(function (response) {
-            return response.data
-          });
       };
 
 

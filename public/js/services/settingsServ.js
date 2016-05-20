@@ -1,6 +1,8 @@
 angular.module("mIdea")
 .service("settingsServ", function($http) {
 
+
+  //logout
   this.logout = function() {
     return $http({
       method: 'GET',
@@ -10,6 +12,7 @@ angular.module("mIdea")
     });
   };
 
+  //ideas
   this.getIdea = function (id) {
     return $http.get('/api/ideas?_id=' + id).then(function (response) {
       return response.data
@@ -20,33 +23,31 @@ angular.module("mIdea")
       return response.data
     });
   }
-
-  this.hideIdea = function (idea) {
+  this.toggleIdea = function (idea) {
     return $http({
       method: "PUT",
       url: "/api/ideas/" + idea._id,
-      data: idea
+      data: {viewable: idea.viewable}
     }).then(function (response) {
       return response.data
     })
   }
-
-  this.getUsers = function() {
+  this.updateTrash = function (idea) {
     return $http({
-      method: 'GET',
-      url: '/users'
-    }).then(function(response) {
-      return response;
-    });
+      method: "PUT",
+      url: "/api/trash/" + idea._id,
+      data: {trash: idea.trash}
+    }).then(function (res) {
+      return res.data
+    })
   };
 
+  //user
   this.getUser = function (id) {
     return $http.get('/users?_id=' + id).then(function (response) {
       return response.data
     });
   };
-
-
   this.updateUser = function(id, collection) {
     return $http({
       method: 'PUT',

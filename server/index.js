@@ -83,6 +83,7 @@ app.get('/api/ideas/query/', ideaCtrl.readByQuery);
 app.put('/api/ideas/:id', ideaCtrl.update);
 app.delete('/api/ideas/:id', ideaCtrl.delete);
 
+app.put('/api/trash/:id', ideaCtrl.updateTrash);
 
 //local-Auth
 app.post('/users', userCtrl.register);

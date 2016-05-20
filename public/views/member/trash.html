@@ -1,5 +1,15 @@
 <nav-bar></nav-bar>
 
-<div class="trash-page-footer">
-  <div id="silkscreen4"></div>
-</div>
+<section class="trash">
+  <div id="silkscreen4">
+    <div class="trash-title">
+      <h2>One man's trash is another man's treasure</h2>
+    </div>
+    <div class="trash">
+      <div class="trashed-cards" ng-repeat="idea in trashed">
+        <ideacard idea="idea" user="user"></ideacard>
+      </div>
+    </div>
+
+  </div>
+</section>
