@@ -9,7 +9,7 @@ a {
 }
 a:hover{
   text-decoration: none;
-  color: #62d18f
+  color: #74B446;
 }
 textarea {
   padding: 10px;
@@ -69,10 +69,21 @@ li input {
   height: 60px;
 }
 .header-name {
-  float: left;
   font-size: 59px;
-  /*text-shadow: 8px 0px 19px;*/
-  font-family: cursive;
+  text-align: center;
+  text-shadow: 0 1px 0 #ccc,
+              0 2px 0 #c9c9c9,
+              0 3px 0 #bbb,
+              0 4px 0 #b9b9b9,
+              0 5px 0 #aaa,
+              0 6px 1px rgba(0,0,0,.1),
+              0 0 5px rgba(0,0,0,.1),
+              0 1px 3px rgba(0,0,0,.3),
+              0 3px 5px rgba(0,0,0,.2),
+              0 5px 10px rgba(0,0,0,.25),
+              0 10px 10px rgba(0,0,0,.2),
+              0 20px 20px rgba(0,0,0,.15);
+  float: left;
 }
 .primary-menu-link {
   float: left;
@@ -130,11 +141,35 @@ li input {
   height: 53px;
   width: 53px;
 }
+.nav-hello:hover {
+  background-color: #f7f7f7;
+  color: #828587;
+  cursor: pointer;
+  text-decoration: none;
+  color: #74B446;
+  -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+}
 .nav-hello-name {
   padding: 19px 13px;
   float: right;
   color: #828587;
   font-size:24px;
+}
+.nav-hello-name:hover {
+  background-color: #f7f7f7;
+  color: #828587;
+  cursor: pointer;
+  text-decoration: none;
+  color: #74B446;
+  -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 }
 .searching {
   height: 380px;
@@ -250,7 +285,7 @@ video {
   width: 100%;
 }
 .vid-description {
-  color: rgb(7, 89, 0);
+  color: rgb(1, 135, 3);
   z-index: 4;
   text-align: center;
   margin-right: auto;
@@ -539,9 +574,10 @@ div#silkscreen2:hover {
   border-radius: 15px;
 }
 .recent-outer-card {
-  width: 100%;
+  width: 50%;
   padding: 0px 20px;
   margin-bottom: 10px;
+  margin: auto;;;
 }
 .recent-outer-card a{
   -moz-transition: color 0s ease-in-out, border-bottom-color 0s ease-in-out;
@@ -874,20 +910,31 @@ div#silkscreen4 {
 	background-repeat: repeat, no-repeat;
 	-webkit-filter: grayscale(1);
 	filter: grayscale(1);
-	transition: 1.3s;
+	transition: 1.3s;;;
 }
 div#silkscreen4:hover {
 	-webkit-filter: grayscale(0);
 	filter: none;
 }
 .trash  {
+  height: 501px;
+}
+.trash-title {
+    color: #3F3D3D;
+    font-size: 35px;;
+    width: 93%;
+    text-align: center;
+    margin: 0px auto 23px auto;
+}
+.trashed-cards {
 
+}
+.trashed-cards .card-outer {
+  margin-bottom: 28px;
+  margin-right: 10px
 }
 
 
-.trash-page-footer {
-
-}
 
 /*///////////////////////////// sign-up and login ///////////////////////*/
 .sign {
@@ -987,8 +1034,9 @@ div#silkscreen4:hover {
 }
 
 /*////////////////////////////////// Settings ////////////////////////////*/
-.settings .idea-own{
-  overflow: auto;
+
+.settings {
+
 }
 .settings-title {
   font-size: 50px;
@@ -1007,50 +1055,84 @@ div#silkscreen4:hover {
               0 20px 20px rgba(0,0,0,.15);
 }
 .settings-card {
-  height: 0px;
-}
-.settings-card-big .card-outer {
-  margin-bottom: 15px;
-  width: 280px;
-  clear: both;
-}
-.settings-card-below {
-  float: left;
-  margin: 82px 125px 15px 15px;
-  cursor: pointer;
-}
-.settings-card-below2 {
-  float: left;
+
+  width: 100%;
+
+  margin-top: 30px;
+
+  margin-bottom: 40px;;
 }
 
-input[type=checkbox] + label {
+.settings-card-below {
+  cursor: pointer;
+  float: left;
+  margin-left: 166px;
+  margin-top: 40px;;
+}
+.settings-card-background {
+  height: 125px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #D9D9DE;
+  border-radius: 10px;
+  background-color: #74b446;
+}
+.settings-card .recent-card-username a{
+  color: #fff;
+}
+.settings-card .recent-card-rating a{
+  color: #fff;
+}
+.settings-card .recent-card-right a{
+  color: #fff;
+}
+
+.settings-check:hover {
   color: #ccc;
   font-style: italic;
 }
-input[type=checkbox]:checked + label {
-  color: #f00;
+.make-private {
+  border: 1px solid;
+  background-color: #f00;
   font-style: normal;
+}
+.settings-check {
+
+  float: right;
+  cursor: pointer;
+  padding: 5px;;
 }
 .settings-check input{
   border: none;
   box-shadow: none;
 }
-.settings-idea-title span {
-  color: #000;
+.settings-card-below body {
+  padding: 140px 0px 0px 0px;
+}
+.settings-card-below h1 {
+ font-size: 2em;
+ font-family: 'Amethysta', serif;
+ text-align: center;
+ line-height: 1.4em;
+ text-transform: uppercase;
+ letter-spacing: .3em;
+ white-space:nowrap;
+}
+.settings-card-below span {
   font-family: 'Caesar Dressing', cursive;
   font-size: 22px;
   vertical-align: middle;
   letter-spacing: 1px;
 }
 
-.fire {
+.fire:hover {
   animation: animation 1s ease-in-out infinite alternate;
   -moz-animation: animation 1s ease-in-out infinite alternate;
   -webkit-animation: animation 1s ease-in-out infinite alternate;
   -o-animation: animation 1s ease-in-out infinite alternate;
 }
 
-.burn {
+.burn:hover {
   animation: animation .65s ease-in-out infinite alternate;
   -moz-animation: animation .65s ease-in-out infinite alternate;
   -webkit-animation: animation .65s ease-in-out infinite alternate;

@@ -18,6 +18,7 @@ angular.module("mIdea")
 
   $scope.toggleIdea = function () {
     this.idea.viewable = !this.idea.viewable;
+    console.log(this.idea.viewable);
     settingsServ.toggleIdea(this.idea).then(function () {
 
     })

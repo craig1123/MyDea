@@ -18,4 +18,7 @@ angular.module('mIdea')
   $scope.getTrash();
 
 
-})
+  
+
+
+});

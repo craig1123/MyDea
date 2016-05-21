@@ -1,15 +1,64 @@
 <nav-bar></nav-bar>
 
-<section class="trash">
-  <div id="silkscreen4">
-    <div class="trash-title">
-      <h2>One man's trash is another man's treasure</h2>
-    </div>
-    <div class="trash">
-      <div class="trashed-cards" ng-repeat="idea in trashed">
-        <ideacard idea="idea" user="user"></ideacard>
-      </div>
-    </div>
 
-  </div>
+ <section class="trash">
+<!--
+    <div id="silkscreen4">
+      <div class="trash-title">
+        <h2>"One man's trash is another man's treasure"</h2>
+      </div> -->
+
+
+              <div class="settings-card" >
+                <li>
+                    <div class="recent-outer-card">
+                      <div class="settings-check" ng-click="toggleIdea()" ng-checked="!idea.viewable" ng-model="private">
+                        <i  class="fa fa-lock" aria-hidden="true">
+                        Click to make private</i>
+                      </div>
+                      <div class="settings-card-background" ng-class="{'make-private': private}">
+                        <div class="recent-card-left">
+                          <div class="card-pic">
+                            <a ui-sref="ideaId({id:idea._id})">
+                              <img ng-src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic"/>
+                            </a>
+
+                            <div class="recent-card-username">
+                              <a ui-sref="ideaId({id:idea._id})">
+                                  {{idea.user.name.first}}  {{idea.user.name.last}}{{idea.user.facebook.name}}
+                              </a>
+                            </div>
+                            <div class="recent-card-rating">
+                              <a ui-sref="ideaId({id:idea._id})">
+                                Rating: {{idea.avg | number:1}}/10.0
+                              </a>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="recent-card-mid">
+                          <a ui-sref="ideaId({id:idea._id})">{{idea.title}}</a>
+                        </div>
+                        <div class="recent-card-right">
+                          <p>
+                            <a ui-sref="ideaId({id:idea._id})">
+                              Posted: {{idea.date | date: "MMM d, yyyy  h:m a"}}
+                            </a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+              </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- </div> -->
+
 </section>

@@ -57,10 +57,6 @@ module.exports = {
     if (req.body.trash === true || req.body.trash === false) {
       req.body.user = undefined;
       console.log("recycling trash");
-      // Idea.user = undefined; //http://stackoverflow.com/questions/4486926/delete-a-key-from-a-mongodb-document-using-mongoose
-      // Idea.save(function (err, i) {
-      //   return err ? res.status(500).send(err) : res.send(i)
-      // })
       Idea.findByIdAndUpdate(req.params.id,
         {$set:{'trash': req.body.trash, 'user': undefined}},
         function (err, i) {

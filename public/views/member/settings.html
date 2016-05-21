@@ -6,55 +6,59 @@
         <div class="settings-title">
           <h2>Your ideas</h2>
         </div>
-        <div class="">
-          <h1>Animated
-            <span class="fire">F</span>
-            <span class="burn">i</span>
-            <span class="burn">r</span>
-            <span class="fire">e</span> Text-Shadow</h1>
-        </div>
         <br>
 
-        <ul class="settings-card" ng-repeat="idea in userIdeas">
+        <div  ng-repeat="idea in userIdeas">
+          <div class="settings-card-below">
+            <h1>
+              <i ng-click="trashIdea()" class="fa fa-trash-o fa-2x fire burn" aria-hidden="true"></i>
+            </h1>
+            <br>
+          </div>
 
-          <li>
-            <a ui-sref="ideaId({id:idea._id})">
-              <ideacard class="settings-card-big" user="user" idea="idea"></ideacard>
-            </a>
-          </li>
+          <div class="settings-card" >
+            <li>
+                <div class="recent-outer-card">
+                  <div class="settings-check" ng-click="toggleIdea()" ng-checked="!idea.viewable" ng-model="private">
+                    <i  class="fa fa-lock" aria-hidden="true">
+                    Click to make private</i>
+                  </div>
+                  <div class="settings-card-background" ng-class="{'make-private': private}">
+                    <div class="recent-card-left">
+                      <div class="card-pic">
+                        <a ui-sref="ideaId({id:idea._id})">
+                          <img ng-src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic"/>
+                        </a>
 
-          <li>
-            <div class="settings-card-below2">
-              <div class="settings-check">
-                <input ng-click="toggleIdea()" ng-checked="!idea.viewable" type="checkbox" id="ossm" name="ossm">
-                <label for="ossm">Idea is now private</label>
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="settings-card-below">
-              <i ng-click="trashIdea()" class="fa fa-trash-o fa-2x fire" aria-hidden="true">
-                <div class="settings-idea-title">
-                  <!-- <h6>
-                    <span class="fire">T</span>
-                    <span class="burn">R</span>
-                    <span class="burn">A</span>
-                    <span class="fire">S</span>
-                    <span class="fire">H  </span>
-
-                    <span class="fire">  I</span>
-                    <span class="fire">D</span>
-                    <span class="burn">E</span>
-                    <span class="burn">A</span>
-                    <span class="fire">?</span>
-                  </h6> -->
+                        <div class="recent-card-username">
+                          <a ui-sref="ideaId({id:idea._id})">
+                              {{idea.user.name.first}}  {{idea.user.name.last}}{{idea.user.facebook.name}}
+                          </a>
+                        </div>
+                        <div class="recent-card-rating">
+                          <a ui-sref="ideaId({id:idea._id})">
+                            Rating: {{idea.avg | number:1}}/10.0
+                          </a>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="recent-card-mid">
+                      <a ui-sref="ideaId({id:idea._id})">{{idea.title}}</a>
+                    </div>
+                    <div class="recent-card-right">
+                      <p>
+                        <a ui-sref="ideaId({id:idea._id})">
+                          Posted: {{idea.date | date: "MMM d, yyyy  h:m a"}}
+                        </a>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </i>
-              <br>
-            </div>
-          </li>
-          </ul>
+            </li>
+          </div>
+
+
+          </div>
         </div>
       </div>
     </div>
