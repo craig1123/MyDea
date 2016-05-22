@@ -25,11 +25,11 @@ angular.module('mIdea')
   ];
 
 
-  $scope.addComment = function(newComment) {
+  $scope.addComment = function(id, newComment) {
     newComment.user = $scope.user._id;
      $scope.idea.comments.push(newComment)
      $scope.comments = $scope.idea.comments;
-       ideaIdServ.postComment($scope.idea).then(function(){
+       ideaIdServ.postComment(id, newComment).then(function(){
          newComment.user = $scope.user;
          newComment.date = new Date();
          $scope.newComment = {};

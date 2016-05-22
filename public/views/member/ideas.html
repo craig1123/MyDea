@@ -13,7 +13,9 @@
     </div>
     <div class="ideas-most-recent">
       <div class="column-recent-title"><h2>Most Recent</h2></div>
-      <div class="ideas-page-content" ng-repeat="idea in nonShuffleIdeas | orderBy : 'date' : true">
+      <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></uib-pagination>
+
+      <div class="ideas-page-content" ng-repeat="idea in mostRecent.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
         <div class="recent-outer-card">
           <div class="recent-background-card">
             <div class="recent-card-left">
@@ -46,6 +48,8 @@
           </div>
         </div>
       </div>
+
+      <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></uib-pagination>
     </div>
     <div class="ideas-random">
       <div class="column-title"><h2>Featured</h2></div>

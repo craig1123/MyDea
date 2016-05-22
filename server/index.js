@@ -84,7 +84,9 @@ app.get('/api/ideas/query/', ideaCtrl.readByQuery);
 app.put('/api/ideas/:id', ideaCtrl.update);
 app.delete('/api/ideas/:id', ideaCtrl.delete);
 
-app.put('/api/trash/:id', ideaCtrl.updateTrash);
+app.put('/api/ideas/rating/:id', ideaCtrl.updateRating);
+app.put('/api/ideas/view/:id', ideaCtrl.updateView);
+app.put('/api/ideas/trash/:id', ideaCtrl.updateTrash);
 
 //local-Auth
 app.post('/users', userCtrl.register);
@@ -111,17 +113,6 @@ app.get('/logout', function(req, res, next) {
           res.redirect('/login');
         }
   }
-
-
-// //authorization
-// app.get('/me', function(req, res) {
-//     res.render('local', { message: req.flash('loginMessage') });
-// });
-// app.post('/login', passport.authenticate('local-signup', {
-//     successRedirect : '/me', // redirect to the secure profile section
-//     failureRedirect : '/login', // redirect back to the signup page if there is an error
-//     failureFlash : true // allow flash messages
-// }));
 
 
 //connection to mongoose

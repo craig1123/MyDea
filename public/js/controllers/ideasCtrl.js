@@ -1,7 +1,25 @@
 angular.module('mIdea')
-.controller('ideasCtrl', function($scope, $state, user, ideaServ) {
+.controller('ideasCtrl', function($scope, $state, user, ideaServ, $log) {
 
   $scope.user = user;
+
+
+  $scope.currentPage = 1;
+  $scope.itemsPerPage = 25;
+  $scope.maxSize = 5; //Number of pager buttons to show
+
+  $scope.setPage = function (pageNo) {
+    $scope.currentPage = pageNo;
+  };
+
+  $scope.pageChanged = function() {
+    console.log('Page changed to: ' + $scope.currentPage);
+  };
+
+// $scope.setItemsPerPage = function(num) {
+//   $scope.itemsPerPage = num;
+//   $scope.currentPage = 1; //reset to first page
+// };
 
   $scope.logout = function () {
     ideaServ.logout().then(function(response) {
@@ -9,9 +27,12 @@ angular.module('mIdea')
     });
   };
 
+
   $scope.getIdeas = function() {
       ideaServ.getIdeas().then(function(results) {
+          $scope.totalItems = results.length;
           $scope.nonShuffleIdeas = results;
+          $scope.mostRecent = results;
           var ideas = [];
           for (var i = 0; i < results.length; i++) {
               ideas.push(results[i]);
@@ -65,10 +86,4 @@ angular.module('mIdea')
     }
       return theArray;
   }
-  //scope for the popup modals
-    // $scope.modalShown = false;
-    // $scope.toggleModal = function() {
-    //   $scope.modalShown = !$scope.modalShown;
-    // };
-
 })

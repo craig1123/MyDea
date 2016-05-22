@@ -8,28 +8,23 @@
         </div>
         <br>
 
-        <div  ng-repeat="idea in userIdeas">
-          <div class="settings-card-below">
-            <h1>
-              <i ng-click="trashIdea()" class="fa fa-trash-o fa-2x fire burn" aria-hidden="true"></i>
-            </h1>
-            <br>
+        <div class="settings-repeat" ng-repeat="idea in userIdeas">
+
+
+          <div class="settings-check" ng-click="toggleIdea(); activeButton()" ng-checked="!idea.viewable" >
+          <i  class="fa fa-lock" aria-hidden="true">
+             Click to make private</i>
           </div>
 
-          <div class="settings-card" >
+          <div class="settings-card">
             <li>
                 <div class="recent-outer-card">
-                  <div class="settings-check" ng-click="toggleIdea()" ng-checked="!idea.viewable" ng-model="private">
-                    <i  class="fa fa-lock" aria-hidden="true">
-                    Click to make private</i>
-                  </div>
-                  <div class="settings-card-background" ng-class="{'make-private': private}">
+                  <div class="settings-card-background" ng-class="{'.settings-card-background2': isActive}">
                     <div class="recent-card-left">
                       <div class="card-pic">
                         <a ui-sref="ideaId({id:idea._id})">
                           <img ng-src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic"/>
                         </a>
-
                         <div class="recent-card-username">
                           <a ui-sref="ideaId({id:idea._id})">
                               {{idea.user.name.first}}  {{idea.user.name.last}}{{idea.user.facebook.name}}
@@ -57,6 +52,12 @@
             </li>
           </div>
 
+          <div class="settings-card-below">
+            <h1>
+              <i ng-click="trashIdea()" class="fa fa-trash-o fa-2x fire burn" aria-hidden="true"></i>
+            </h1>
+            <br>
+          </div>
 
           </div>
         </div>

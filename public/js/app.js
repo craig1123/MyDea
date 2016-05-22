@@ -1,4 +1,4 @@
-angular.module('mIdea', ['ui.router', 'ngAnimate', 'ui.bootstrap'])
+angular.module('mIdea', ['ui.router', 'ngAnimate', 'ui.bootstrap', 'ngTouch'])
 
 .config(function ($stateProvider, $urlRouterProvider) {
 

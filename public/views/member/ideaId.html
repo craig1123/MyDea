@@ -17,8 +17,6 @@
               </div><br>
           </div>
         </div>
-
-
         <div class="idea-own-content">
             <div class="idea-own-description">
                 <h2>{{idea.description}}</h2>
@@ -75,7 +73,7 @@
             <textarea ng-model="newComment.content" placeholder="Give Feedback" class='comment-here'></textarea>
           </div>
             <div class="comment-bot-btn">
-              <button type="submit" ng-click='addComment(newComment);' class='comment-btn'>Give</button>
+              <button type="submit" ng-click='addComment(idea._id, newComment);' class='comment-btn'>Give</button>
             </div>
         </form>
       </div>

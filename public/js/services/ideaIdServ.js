@@ -10,7 +10,7 @@ angular.module('mIdea')
       this.updateIdea = function (id, rating) {
         return $http({
           method: "PUT",
-          url: "/api/ideas/" + id,
+          url: "/api/ideas/rating/" + id,
           data: {rating:rating}
         }).then(function (res) {
           return res.data
@@ -18,20 +18,12 @@ angular.module('mIdea')
       };
 
 //comments
-      this.getComments = function () {
-        return $http({
-          method: "GET",
-          url: '/api/comments'
-        }).then(function (res) {
-          console.log(res);
-          return res.data;
-        })
-      };
-      this.postComment = function (idea) {
+
+      this.postComment = function (id, comments) {
         return $http({
           method: "PUT",
-          url: "/api/ideas/" + idea._id,
-          data: idea
+          url: "/api/ideas/" + id,
+          data: {comments:comments}
         }).then(function (response) {
           return response.data
         })

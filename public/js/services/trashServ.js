@@ -20,7 +20,7 @@ angular.module('mIdea')
   this.updateTrash = function (idea) {
     return $http({
       method: "PUT",
-      url: "/api/trash/" + idea._id,
+      url: "/api/ideas/trash/" + idea._id,
       data: {trash: idea.trash}
     }).then(function (res) {
       return res.data

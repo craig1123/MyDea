@@ -1,64 +1,46 @@
 <nav-bar></nav-bar>
-
-
  <section class="trash">
-<!--
     <div id="silkscreen4">
-      <div class="trash-title">
-        <h2>"One man's trash is another man's treasure"</h2>
-      </div> -->
-
-
-              <div class="settings-card" >
-                <li>
-                    <div class="recent-outer-card">
-                      <div class="settings-check" ng-click="toggleIdea()" ng-checked="!idea.viewable" ng-model="private">
-                        <i  class="fa fa-lock" aria-hidden="true">
-                        Click to make private</i>
-                      </div>
-                      <div class="settings-card-background" ng-class="{'make-private': private}">
-                        <div class="recent-card-left">
-                          <div class="card-pic">
-                            <a ui-sref="ideaId({id:idea._id})">
-                              <img ng-src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic"/>
-                            </a>
-
-                            <div class="recent-card-username">
-                              <a ui-sref="ideaId({id:idea._id})">
-                                  {{idea.user.name.first}}  {{idea.user.name.last}}{{idea.user.facebook.name}}
-                              </a>
-                            </div>
-                            <div class="recent-card-rating">
-                              <a ui-sref="ideaId({id:idea._id})">
-                                Rating: {{idea.avg | number:1}}/10.0
-                              </a>
-                          </div>
-                        </div>
-                      </div>
-                        <div class="recent-card-mid">
-                          <a ui-sref="ideaId({id:idea._id})">{{idea.title}}</a>
-                        </div>
-                        <div class="recent-card-right">
-                          <p>
-                            <a ui-sref="ideaId({id:idea._id})">
-                              Posted: {{idea.date | date: "MMM d, yyyy  h:m a"}}
-                            </a>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                </li>
+      <div class="trash-top">
+      <uib-carousel active="active" no-wrap="noWrapSlides">
+      <uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+        <div class="trashed-card" ng-repeat = "slide in slide.ideas track by slide._id">
+          <li>
+            <div class="recent-outer-card">
+              <div class="trash-card-background">
+                <div class="recent-card-left">
+                  <div class="card-pic">
+                    <a ui-sref="ideaId({id:slide._id})">
+                      <img ng-src="{{slide.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic"/>
+                    </a>
+                    <div class="recent-card-rating">
+                      <a ui-sref="ideaId({id:slide._id})">
+                        Rating: {{slide.avg | number:1}}/10.0
+                      </a>
+                  </div>
+                </div>
               </div>
-
-
-
-
-
-
-
-
-
-
-    <!-- </div> -->
-
+                <div class="recent-card-mid">
+                  <a ui-sref="ideaId({id:slide._id})">{{slide.title}}</a>
+                </div>
+                <div class="recent-card-right">
+                  <p>
+                    <a ui-sref="ideaId({id:slide._id})">
+                      Posted: {{slide.date | date: "MMM d, yyyy  h:m a"}}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </li>
+        </div>
+      </uib-slide>
+    </uib-carousel>
+  </div>
+      <div class="trash-bottom">
+        <div class="trash-title">
+          <h2>One man's trash is another man's treasure</h2>
+        </div>
+      </div>
+    </div>
 </section>

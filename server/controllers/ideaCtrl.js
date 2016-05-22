@@ -29,17 +29,12 @@ module.exports = {
     if (!req.params.id) {
       return res.status(400).send('id query needed');
     }
-    if (req.body.rating) {
-      console.log("just updating rating");
-      Idea.findByIdAndUpdate(req.params.id, {$push:{"rating":req.body.rating}}, function (err, i) {
-          return res.send(i);
-      });
-    }
-    if (req.body.viewable === true || req.body.viewable === false) {
-      console.log("makin it private");
+    if (req.body.comments) {
+      console.log("commenting");
       Idea.findByIdAndUpdate(req.params.id,
-        {$set:{"viewable": req.body.viewable}},
-        function (err, i) {
+        {$push:{"comments":req.body.comments}},
+        {safe: true, new: true},
+         function (err, i) {
           return res.send(i);
       });
     }
@@ -48,6 +43,31 @@ module.exports = {
         Idea.findByIdAndUpdate(req.params.id, req.body, function (err, i) {
           return res.send(i);
         })
+    }
+  },
+  updateRating: function (req, res) {
+    if (!req.params.id) {
+      return res.status(400).send('id query needed');
+    } else
+      console.log("just updating rating");
+      Idea.findByIdAndUpdate(req.params.id,
+        {$push:{"rating":req.body.rating}},
+        {safe: true},
+        function (err, i) {
+          return res.send(i);
+      });
+    },
+  updateView: function (req, res) {
+    if (!req.params.id) {
+      return res.status(400).send('id query needed');
+    }
+    if (req.body.viewable === true || req.body.viewable === false) {
+      console.log("makin it private");
+      Idea.findByIdAndUpdate(req.params.id,
+        {$set:{"viewable": req.body.viewable}},
+        function (err, i) {
+          return res.send(i);
+      })
     }
   },
   updateTrash: function (req, res) {

@@ -36,7 +36,6 @@ angular.module('mIdea')
       };
       return array;
   };
-
   $scope.findTopThree = function(array) {
       for (var i = 0; i < array.length; i++) {
           var total = 0;
@@ -54,9 +53,7 @@ angular.module('mIdea')
       array = bubbleSort(array);
       $scope.nonShuffleIdeas = array;
   }
-
   function bubbleSort(theArray) {
-
     for (var i = theArray.length - 1; i >= 0; i--) {
       for (var j = 0; j < i; j++) {
           if (theArray[j + 1].avg > theArray[j].avg) {
@@ -68,11 +65,6 @@ angular.module('mIdea')
     }
       return theArray;
   }
-
-  $scope.modalShown = false;
-   $scope.toggleModal = function() {
-     $scope.modalShown = !$scope.modalShown;
-   };
 
   // var socket = io();
   //
