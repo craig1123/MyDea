@@ -1,4 +1,4 @@
-angular.module('mIdea', ['ui.router', 'ngAnimate', 'ui.bootstrap', 'ngTouch'])
+angular.module('mIdea', ['ui.router', 'ngAnimate', 'ui.bootstrap', 'ngTouch', 'ui.gravatar'])
 
 .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -86,4 +86,13 @@ var userResolve = {
       }
     });
 
-});
+}).config(['gravatarServiceProvider', function(gravatarServiceProvider) {
+    gravatarServiceProvider.defaults = {
+      size     : 50,
+      "default": 'mm'  // Mystery man as default for missing avatars
+    };
+
+    // Use https endpoint
+    gravatarServiceProvider.secure = true;
+    
+  }]);

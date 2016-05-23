@@ -1,6 +1,16 @@
 angular.module('mIdea')
 .service('ideaIdServ', function ($http) {
 
+  this.logout = function() {
+    return $http({
+      method: 'GET',
+      url: '/logout',
+    }).then(function(response) {
+      return response;
+    });
+  };
+
+
 //ideas
       this.getIdeas = function () {
         return $http.get('/api/ideas?viewable=true?trash=true').then(function (response) {

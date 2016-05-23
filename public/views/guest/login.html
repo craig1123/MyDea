@@ -9,7 +9,7 @@
             <fieldset>
               <ol>
                 <li class="mb2"><input autofocus="autofocus" type="email" placeholder="Email" ng-model="credentials.email" required></li>
-                <li class="mb2"><input autofocus="autofocus" type="password" placeholder="Password" ng-model="credentials.password" required></li>
+                <li class="mb2"><input type="password" placeholder="Password" ng-model="credentials.password" required></li>
                 <li class="mb2-signup">
                   <br>
                   <input class="btn btn--green btn--block submit" type="submit" value="Log in!" ng-click="login(credentials.email, credentials.password)">

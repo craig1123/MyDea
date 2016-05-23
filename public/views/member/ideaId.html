@@ -1,10 +1,11 @@
 <nav-bar></nav-bar>
 
 <section class="idea-own-outside" idea='idea' user='user'>
+
     <div class="idea-own">
       <div class="idea-own-left">
           <div class="own-pic">
-              <img ng-src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic" />
+              <img gravatar-src-once=idea.user.email src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}"  alt="Profile pic"/>
               <div class="idea-own-column">
                   <h1>{{idea.title}}</h1>
               </div>
@@ -18,7 +19,7 @@
           </div>
         </div>
         <div class="idea-own-content">
-            <div class="idea-own-description">
+          <div class="idea-own-description">
                 <h2>{{idea.description}}</h2>
                 <br>
                 <div class="idea-own-important">
@@ -32,7 +33,7 @@
                       <u>What is it</u>: {{idea.what}}
                     </p>
                 </div>
-            </div>
+                </div>
             <br>
               <hr>
             <div class="idea-own-rating">
@@ -54,7 +55,9 @@
             <div>
                 <ul class="comment-box" ng-repeat="comnt in idea.comments">
                   <li>
-                    <img src="{{comnt.user.facebook.pic || './../../img/profile_default.png'}}" alt="" />
+                    <img gravatar-src-once=comnt.user.email src="{{comnt.user.facebook.pic || './../../img/profile_default.png'}}"  alt="Profile pic"/>
+
+
                     <div class="comment-content">
                       {{comnt.content}}
                     </div>
@@ -71,9 +74,12 @@
           </div>
           <div class="comment-bottom">
             <textarea ng-model="newComment.content" placeholder="Give Feedback" class='comment-here'></textarea>
+            <button type="submit" ng-click='addComment(idea._id, newComment);' class='comment-btn'>Give</button>
+
           </div>
             <div class="comment-bot-btn">
-              <button type="submit" ng-click='addComment(idea._id, newComment);' class='comment-btn'>Give</button>
+              <input type="checkbox" name="name" ng-model="checked">Post anonymously
+
             </div>
         </form>
       </div>

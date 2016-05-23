@@ -482,6 +482,21 @@ div#silkscreen:hover {
 	-webkit-filter: grayscale(0);
 	filter: none;
 }
+.lightbulb-top {
+  width: 67%;
+  margin: auto;
+  position: relative;
+}
+.lightbulb-title {
+  color: #FFFFFF;
+  font-family: 'LeagueGothicRegular';
+  font-size: 40px;
+  width: 95%;
+  text-align: center;
+  margin: 0px auto;
+  position: absolute;
+  top: 150px;
+}
 div#silkscreen2 {
 	background: url(/../img/silkscreen.svg), url(/../img/grass-bulb-bottom.jpg);
 	padding-bottom: 300px;
@@ -494,6 +509,21 @@ div#silkscreen2 {
 div#silkscreen2:hover {
 	-webkit-filter: grayscale(0);
 	filter: none;
+}
+.lightbulb-bottom {
+  width: 50%;
+  margin: auto;
+  position: relative;
+}
+.lightbulb-bottom-title {
+  color: #FFFFFF;
+  font-family: 'LeagueGothicRegular';
+  font-size: 40px;
+  width: 95%;
+  text-align: center;
+  margin: 0px auto;
+  position: absolute;
+  top: 175px;
 }
 .ideas-page-footer {
   height: 20px;
@@ -534,6 +564,10 @@ div#silkscreen2:hover {
   background-color: #74b446;
   border: 1px solid #D9D9DE;
   border-radius: 15px;
+}
+.pagination {
+  margin-left: 35px;
+  border-radius: 10px;
 }
 .recent-outer-card {
   width: 95%;

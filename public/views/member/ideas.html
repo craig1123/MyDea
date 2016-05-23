@@ -1,7 +1,13 @@
 <nav-bar></nav-bar>
 <section>
   <div class="ideas-page-header">
-    <div id="silkscreen"></div>
+    <div id="silkscreen">
+      <div class="lightbulb-top">
+        <div class="lightbulb-title">
+          <h2>A single idea from the human mind can build cities</h2>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="ideas-page">
@@ -15,13 +21,13 @@
       <div class="column-recent-title"><h2>Most Recent</h2></div>
       <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></uib-pagination>
 
-      <div class="ideas-page-content" ng-repeat="idea in mostRecent.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
+      <div class="ideas-page-content" ng-repeat="idea in filteredlist = (mostRecent | filter:filterlist) | orderBy: 'date': true | pagination1: currentPage : itemsPerPage">
         <div class="recent-outer-card">
           <div class="recent-background-card">
             <div class="recent-card-left">
               <div class="card-pic">
                 <a ui-sref="ideaId({id:idea._id})">
-                  <img ng-src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic"/>
+                  <img gravatar-src-once=idea.user.email src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}"  alt="Profile pic"/>
                 </a>
                 <div class="recent-card-username">
                   <a ui-sref="ideaId({id:idea._id})">
@@ -59,7 +65,13 @@
     </div>
   </div>
   <div class="ideas-page-footer">
-    <div id="silkscreen2"></div>
+    <div id="silkscreen2">
+      <div class="lightbulb-bottom">
+        <div class="lightbulb-bottom-title">
+          <h2>An idea can transform the world and re-write all the rules</h2>
+        </div>
+      </div>
+    </div>
   </div>
 
 </section>

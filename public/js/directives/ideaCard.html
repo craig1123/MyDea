@@ -4,7 +4,8 @@
       <div class="card-top-link">
         <div class="card-pic">
           <a ui-sref="ideaId({id:idea._id})">
-            <img ng-src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic"/>
+
+            <img gravatar-src-once=idea.user.email src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}"  alt="Profile pic"/>
           </a>
         </div>
       </div>

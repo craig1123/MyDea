@@ -11,17 +11,17 @@ module.exports = {
   read: function (req, res) {
     Idea.find(req.query).populate({
       path:'user',
-      select:"name facebook",
+      select:"name facebook email",
     }).populate({
       path:'comments.user',
-      select: 'name facebook'
+      select: 'name facebook email'
     }).exec(function (err, i) {
       res.send(i);
     })
   },
   readByQuery: function (req, res) {
     Idea.find({$or: [{title:{$regex:req.query.search}}, {description:{$regex: req.query.search}}, {what:{$regex:req.query.search}}]})
-    .populate({path:'user', select:"name facebook"}).limit(4).exec(function (err, i) {
+    .populate({path:'user', select:"name facebook email"}).limit(4).exec(function (err, i) {
       res.send(i);
     })
   },

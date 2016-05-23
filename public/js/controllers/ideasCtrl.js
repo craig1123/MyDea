@@ -16,6 +16,7 @@ angular.module('mIdea')
     console.log('Page changed to: ' + $scope.currentPage);
   };
 
+
 // $scope.setItemsPerPage = function(num) {
 //   $scope.itemsPerPage = num;
 //   $scope.currentPage = 1; //reset to first page
@@ -30,9 +31,11 @@ angular.module('mIdea')
 
   $scope.getIdeas = function() {
       ideaServ.getIdeas().then(function(results) {
+        $scope.mostRecent = results;
+        $scope.filteredlist = $scope.mostRecent
           $scope.totalItems = results.length;
+
           $scope.nonShuffleIdeas = results;
-          $scope.mostRecent = results;
           var ideas = [];
           for (var i = 0; i < results.length; i++) {
               ideas.push(results[i]);
@@ -86,4 +89,12 @@ angular.module('mIdea')
     }
       return theArray;
   }
-})
+}).filter('pagination1', function() {
+	  return function(input, currentPage, pageSize) {
+	    if(angular.isArray(input)) {
+	      var start = (currentPage-1)*pageSize;
+	      var end = currentPage*pageSize;
+	      return input.slice(start, end);
+	    }
+	  };
+	});

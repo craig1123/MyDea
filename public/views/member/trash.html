@@ -11,11 +11,11 @@
                 <div class="recent-card-left">
                   <div class="card-pic">
                     <a ui-sref="ideaId({id:slide._id})">
-                      <img ng-src="{{slide.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic"/>
+                      <img ng-src="./../../img/profile_default.png" alt="Profile pic"/>
                     </a>
                     <div class="recent-card-rating">
                       <a ui-sref="ideaId({id:slide._id})">
-                        Rating: {{slide.avg | number:1}}/10.0
+                        Rating: {{avg(slide.rating) | number:1}}/10.0
                       </a>
                   </div>
                 </div>

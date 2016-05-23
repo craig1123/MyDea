@@ -4,7 +4,7 @@
       <img class="logo" src="./img/logo.png" alt="MyDea" />
     </div>
     <div class="header-name">
-      <a ui-sref="profile">mIdea</a>
+      <a ui-sref="profile">myDea</a>
     </div>
     <nav aria-labelledby="main-navigation" class="left" role="navigation">
       <ul class="primary-menu">
@@ -21,7 +21,10 @@
       <ul>
         <a class="nav-sign-up" ng-click="logout()">Logout</a>
           <a ui-sref="settings({id:userSettings._id})">
-            <h3><li class="nav-hello"><img src="{{user.facebook.pic || './../../img/profile_default.png'}}" alt="" /></li></h3>
+            <h3><li class="nav-hello">
+              <img gravatar-src-once="user.email" src="{{user.facebook.pic}}"/>
+            </li></h3>
+            <!-- './../../img/profile_default.png' -->
           </a>
           <a ui-sref="settings({id:userSettings._id})">
             <h3><li class="nav-hello-name">{{user.name.first}} {{user.name.last}}{{user.facebook.name}}</li></h3>

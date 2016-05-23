@@ -9,16 +9,16 @@ angular.module('mIdea')
     });
   };
 
-  function avg (arry){
+  $scope.avg = function (arry){
     if(!arry || arry.length==0){
       return 0;
     }
     return arry.reduce(function(tot,x){return x+tot},0)/arry.length;
   }
 
+
   $scope.getTrash = function () {
     trashServ.getIdeas().then(function (response) {
-      console.log(response);
       $scope.trashed = response;
       var slides = [];
       for (var i = 0; i < response.length/9; i++) {
@@ -28,8 +28,6 @@ angular.module('mIdea')
           slides.push(slide);
       }
       $scope.slides = slides;
-      console.log(slides);
-      // $scope.idea.avg = avg(ideas);
     })
   }
   $scope.getTrash();

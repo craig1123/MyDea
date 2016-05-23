@@ -6,6 +6,8 @@ var bodyParser = require('body-parser');
 var passport = require('passport');
 var flash = require('connect-flash');
 var cookieParser = require('cookie-parser');
+var serverConfig = require('./server_config.js');
+var port = serverConfig.serverPort;
 
 //Controllers
 var userCtrl = require('./controllers/userCtrl');
@@ -125,7 +127,7 @@ mongoose.connection.once("open", function() {
 });
 
 
-var port = 4000;
+
 app.listen(port, function () {
   console.log("It's game time on " + port + "!");
 })

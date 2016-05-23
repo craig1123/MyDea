@@ -12,7 +12,7 @@ var ideaSchema = new Schema({
   user: {type: Schema.Types.ObjectId, ref: 'User'},
   comments: [{
     content: {type: String},
-    user: {type:Schemna.Types.ObjectId, ref: "User"},
+    user: {type:Schema.Types.ObjectId, ref: "User"},
     date: {type: Date, default: new Date()}
   }],
   date: {type: Date, default: Date.now},

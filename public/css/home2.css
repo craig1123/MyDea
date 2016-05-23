@@ -14,7 +14,7 @@
   width: 100%;
   height: 70px;
   text-align: center;
-  font-size: 30px;
+  font-size: 22px;
   margin: auto;
   text-shadow: 0 1px 0 #ccc,
               0 2px 0 #c9c9c9,
@@ -30,7 +30,9 @@
               0 20px 20px rgba(0,0,0,.15);
 }
 .idea-own-column h1{
-  margin: -15px autto;
+  margin: -15px auto;
+  word-break: break-all;
+  width: 70%;
 }
 .own-username{
   margin-top: -50px;
@@ -46,6 +48,7 @@
 .idea-own-description {
 
 }
+
 .idea-own-description h2{
   margin-top: -20px;
   width: 85%;
@@ -64,6 +67,13 @@
   letter-spacing: .5px;
   font-family: serif;
   font-size: 19px;
+  word-wrap: break-word;
+  z-index: -10;
+  background: #74B446;
+}
+.idea-own-important p u{
+  z-index: 10;
+  color: #fff;
 }
 .idea-own-rating {
   float: left;
@@ -89,6 +99,9 @@
   border: 1px solid #D9D9DE;
   margin-bottom: 5px;
   color: #fff;
+}
+.comment-box li img {
+  height: 50px;
 }
 .own-date {
   float: right;
@@ -137,7 +150,9 @@
   background-image: linear-gradient(to bottom, #2ec764, #23a655);
   text-decoration: none;
 }
-
+.comment-bot-btn {
+  margin-bottom: 20px;
+}
 
 /*----------------------------------------idea cards-------------------------*/
 .home-content {
@@ -225,10 +240,12 @@
 }
 .card-pic {
   float: left;
+
 }
 .card-pic img{
   height: 50px;
   width: 50px;
+  margin-right: 40px;
 }
 .card-username {
   padding: 40px 0px 0px 60px;

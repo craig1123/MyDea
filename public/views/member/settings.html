@@ -11,19 +11,19 @@
         <div class="settings-repeat" ng-repeat="idea in userIdeas">
 
 
-          <div class="settings-check" ng-click="toggleIdea(); activeButton()" ng-checked="!idea.viewable" >
-          <i  class="fa fa-lock" aria-hidden="true">
+          <label class="settings-check" ng-click="toggleIdea()" ng-checked="!idea.viewable" >
+            <i  class="fa fa-lock" aria-hidden="true">
              Click to make private</i>
-          </div>
+        </label>
 
           <div class="settings-card">
             <li>
                 <div class="recent-outer-card">
-                  <div class="settings-card-background" ng-class="{'.settings-card-background2': isActive}">
+                  <div class="{{changeBack}}" >
                     <div class="recent-card-left">
                       <div class="card-pic">
                         <a ui-sref="ideaId({id:idea._id})">
-                          <img ng-src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}" alt="Profile pic"/>
+                          <img gravatar-src-once=idea.user.email src="{{idea.user.facebook.pic || './../../img/profile_default.png'}}"  alt="Profile pic"/>
                         </a>
                         <div class="recent-card-username">
                           <a ui-sref="ideaId({id:idea._id})">
@@ -32,7 +32,7 @@
                         </div>
                         <div class="recent-card-rating">
                           <a ui-sref="ideaId({id:idea._id})">
-                            Rating: {{idea.avg | number:1}}/10.0
+                            Rating: {{avg(idea.rating) | number:1}}/10.0
                           </a>
                       </div>
                     </div>
