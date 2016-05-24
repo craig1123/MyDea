@@ -112,7 +112,7 @@
 .comment-content {
   width: 55%;
   margin: auto;
-  word-break: break-all;
+  word-wrap: break-word;
 }
 .comment-here {
   border-radius: 5px;

@@ -7,6 +7,7 @@ angular.module('mIdea', ['ui.router', 'ngAnimate', 'ui.bootstrap', 'ngTouch', 'u
 var userResolve = {
     user: function(mainServ, $state) {
       return mainServ.getUser().then(function(response) {
+        console.log(response);
         return response.data;
       }).catch(function(err) {
         $state.go('login');
@@ -94,5 +95,5 @@ var userResolve = {
 
     // Use https endpoint
     gravatarServiceProvider.secure = true;
-    
+
   }]);
