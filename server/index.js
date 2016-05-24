@@ -119,7 +119,7 @@ app.get('/logout', function(req, res, next) {
 
 //connection to mongoose
 mongoose.set('debug', true);
-mongoose.connect('mongodb://localhost:27017/mIdea', function (err) {
+mongoose.connect('mongodb://localhost:27017/myDea', function (err) {
   if (err) throw err;
 });
 mongoose.connection.once("open", function() {

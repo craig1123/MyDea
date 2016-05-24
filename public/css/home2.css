@@ -31,7 +31,7 @@
 }
 .idea-own-column h1{
   margin: -15px auto;
-  word-break: break-all;
+  word-wrap: break-word;
   width: 70%;
 }
 .own-username{
@@ -46,10 +46,11 @@
   margin-bottom: 40px;
 }
 .idea-own-description {
-
+  word-wrap: break-word;
 }
 
 .idea-own-description h2{
+  word-wrap: break-word;
   margin-top: -20px;
   width: 85%;
   margin: auto;
@@ -273,7 +274,7 @@
 .card-mid {
   padding: 10px;
   height: 50%;
-  word-break: break-all
+  word-wrap: break-word;
 }
 .card-bottom {
   position: relative;
