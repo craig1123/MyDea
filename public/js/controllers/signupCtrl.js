@@ -8,7 +8,8 @@ angular.module('mIdea')
       }
     else {
       mainServ.register($scope.newUser).then(function(response) {
-          $state.go('profile');
+        $state.reload();
+          $state.go('login');
       });
     }
   };

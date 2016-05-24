@@ -115,15 +115,13 @@
 }
 .comment-here {
   border-radius: 5px;
-  width: 40%;
-  height: 38px;
-  -webkit-transition: width 2s, height 2s;
-  transition: width 1s, height 1s;
-}
-.comment-here:focus {
   width: 63%;
   height: 100px;
+  -webkit-transition: width 2s, height 2s;
+  transition: width 1s, height 1s;
+  float: left;
 }
+
 .comment-bottom {
   vertical-align: bottom;
 }
@@ -150,8 +148,12 @@
   background-image: linear-gradient(to bottom, #2ec764, #23a655);
   text-decoration: none;
 }
-.comment-bot-btn {
-  margin-bottom: 20px;
+.bot-btn {
+  margin-left: 10px
+}
+.comment-bot-check {
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 /*----------------------------------------idea cards-------------------------*/

@@ -74,10 +74,12 @@
           </div>
           <div class="comment-bottom">
             <textarea ng-model="newComment.content" placeholder="Give Feedback" class='comment-here'></textarea>
-            <button type="submit" ng-click='addComment(idea._id, newComment);' class='comment-btn'>Give</button>
+            <div class="bot-btn">
+              <button type="submit" ng-click='addComment(idea._id, newComment);' class='comment-btn'>Give</button>
+            </div>
 
           </div>
-            <div class="comment-bot-btn">
+            <div class="comment-bot-check">
               <input type="checkbox" name="name" ng-model="checked">Post anonymously
 
             </div>

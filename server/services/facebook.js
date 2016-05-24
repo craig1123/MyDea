@@ -9,7 +9,7 @@ module.exports = function (passport) {
   passport.use(new FacebookStrategy({
     clientID: keys.facebookID,
     clientSecret: keys.facebookSecret,
-    callbackURL: 'http://localhost:4000/login/facebook/callback',
+    callbackURL: 'http://mydea.co/#/home/login/facebook/callback',
     passReqToCallback : true,
     profileFields: ['id', 'displayName', 'photos', 'email']
   }, // facebook will send back the token and profile
