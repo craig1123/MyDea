@@ -35,7 +35,7 @@ angular.module('mIdea')
      $scope.comments = $scope.idea.comments;
        ideaIdServ.postComment(id, newComment).then(function(){
          newComment.user = $scope.user;
-         newComment.date = new Date();
+        //  newComment.date = new Date();
          $scope.newComment = {};
          $state.reload();
       })

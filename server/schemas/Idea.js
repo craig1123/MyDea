@@ -8,7 +8,7 @@ var ideaSchema = new Schema({
   what: {type: String, required: true},
   how: {type: String, required: true},
   why: {type: String, required: true},
-  rating: [{type: Number}],
+  rating: [{type: Number, min: 18, max: 65}],
   user: {type: Schema.Types.ObjectId, ref: 'User'},
   comments: [{
     content: {type: String},
